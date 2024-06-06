@@ -1,5 +1,7 @@
 #pragma once
 #include "RasterFile.h"
+#include "Constants.h"
+#include <fstream>
 
 class FileFactory
 {

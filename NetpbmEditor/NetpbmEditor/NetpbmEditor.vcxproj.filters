@@ -31,6 +31,12 @@
     <Filter Include="Source Files\Commands">
       <UniqueIdentifier>{b883ecf1-fae2-48c4-a520-916537f2e548}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Constants">
+      <UniqueIdentifier>{f3674b6f-6a78-4af5-bc30-1689d10f785b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Constants">
+      <UniqueIdentifier>{415f96b7-04bf-4e98-a109-d708f7fe85c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NetpbmEditor.cpp">
@@ -74,6 +80,12 @@
     </ClCompile>
     <ClCompile Include="MyString.cpp">
       <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Constants.cpp">
+      <Filter>Source Files\Constants</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicSet.cpp">
+      <Filter>Source Files\Structures</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +135,12 @@
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
     <ClInclude Include="MyString.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files\Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicSet.h">
       <Filter>Header Files\Structures</Filter>
     </ClInclude>
   </ItemGroup>

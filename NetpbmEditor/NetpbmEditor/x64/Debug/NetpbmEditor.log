@@ -1,15 +1,14 @@
 ﻿  CommandContainer.cpp
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(71,13): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+  Constants.cpp
   Editor.cpp
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Editor.cpp(16,20): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
   Engine.cpp
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Engine.cpp(23,24): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  FileFactory.cpp
   GrayscaleCommand.cpp
   LoadCommand.cpp
   MonochromeCommand.cpp
   NetpbmEditor.cpp
-  RasterFileContainer.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\RasterFileContainer.cpp(106,13): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-  Session.cpp
   Generating Code...
   NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\x64\Debug\NetpbmEditor.exe

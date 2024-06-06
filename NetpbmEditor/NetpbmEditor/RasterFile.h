@@ -2,6 +2,10 @@
 
 class RasterFile 
 {
+protected:
+	unsigned magicNumber;
+	unsigned width;
+	unsigned height;
 public:
 	virtual void grayscale() = 0;
 	virtual void monochrome() = 0;
