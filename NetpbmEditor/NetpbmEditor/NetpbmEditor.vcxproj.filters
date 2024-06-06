@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\FileModels">
+      <UniqueIdentifier>{347c50dc-c46e-42ad-ae5c-f5b417beebae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FileModels">
+      <UniqueIdentifier>{15065080-d096-457c-90cb-edcb07581be0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Structures">
+      <UniqueIdentifier>{0d3c49e3-ad96-4edd-82da-737fede435d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Transformations">
+      <UniqueIdentifier>{5a9f2f71-9971-4ff2-8a09-946722e637aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Transformations">
+      <UniqueIdentifier>{69ea0a3b-a9d8-4585-83d2-064239bd64f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Structures">
+      <UniqueIdentifier>{1ce93ce7-ab0c-4b13-bc4d-78041ff6a176}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="NetpbmEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Session.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Transformations.cpp">
+      <Filter>Source Files\Transformations</Filter>
+    </ClCompile>
+    <ClCompile Include="FileFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RasterFileContainer.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformationContainer.cpp">
+      <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Editor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.hpp">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Session.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RasterFile.h">
+      <Filter>Header Files\FileModels</Filter>
+    </ClInclude>
+    <ClInclude Include="PPMFile.h">
+      <Filter>Header Files\FileModels</Filter>
+    </ClInclude>
+    <ClInclude Include="PGMFile.h">
+      <Filter>Header Files\FileModels</Filter>
+    </ClInclude>
+    <ClInclude Include="PBMFile.h">
+      <Filter>Header Files\FileModels</Filter>
+    </ClInclude>
+    <ClInclude Include="Transformation.h">
+      <Filter>Header Files\Transformations</Filter>
+    </ClInclude>
+    <ClInclude Include="FileFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RasterFileContainer.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformationContainer.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
