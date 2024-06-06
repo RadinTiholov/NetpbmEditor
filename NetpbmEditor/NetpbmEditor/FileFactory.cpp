@@ -1,6 +1,6 @@
 #include "FileFactory.h"
 
-static RasterFile* createFile(const char* fileName) 
+RasterFile* FileFactory::createFile(const char* fileName)
 {
 	return nullptr;
 }

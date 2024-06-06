@@ -1,24 +1,15 @@
-﻿  Editor.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Editor.cpp(13,20): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+﻿  CommandContainer.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(71,13): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+  Editor.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Editor.cpp(16,20): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+  Engine.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Engine.cpp(23,24): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  GrayscaleCommand.cpp
+  LoadCommand.cpp
+  MonochromeCommand.cpp
   NetpbmEditor.cpp
-  PolymorphicContainer.hpp
+  RasterFileContainer.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\RasterFileContainer.cpp(106,13): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
   Session.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PolymorphicContainer.hpp(19,7): error C2039: 'push_back': is not a member of 'Vector<PolymorphicPtr<T>>'
-          with
-          [
-              T=RasterFile
-          ]
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PolymorphicContainer.hpp(9,2): message : see declaration of 'Vector<PolymorphicPtr<T>>'
-          with
-          [
-              T=RasterFile
-          ]
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PolymorphicContainer.hpp(18,43): message : while compiling class template member function 'void PolymorphicContainer<RasterFile>::add(T *)'
-          with
-          [
-              T=RasterFile
-          ]
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(15,11): message : see the first reference to 'PolymorphicContainer<RasterFile>::add' in 'Session::addFile'
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.h(15,35): message : see reference to class template instantiation 'PolymorphicContainer<RasterFile>' being compiled
-  Transformations.cpp
   Generating Code...
+  NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\x64\Debug\NetpbmEditor.exe

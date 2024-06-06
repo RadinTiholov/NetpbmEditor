@@ -4,12 +4,15 @@ void Editor::save() const
 {
 
 }
+
 void Editor::saveAs(const char* newFileName) const
 {
 
 }
+
 void Editor::load(const char* fileName) 
 {
+	// TODO: Test this if works
 	unsigned newIndex = this->sessions.getSize() + 1;
 	this->indexOfCurrentSession = newIndex;
 	Session session(newIndex);

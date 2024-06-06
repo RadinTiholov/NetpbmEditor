@@ -1,8 +1,6 @@
 #pragma once
 #include "RasterFile.h"
-#include "Transformation.h"
 #include "RasterFileContainer.h"
-#include "TransformationContainer.h"
 
 class Session
 {
@@ -11,9 +9,13 @@ public:
 	Session(unsigned id);
 	unsigned getId() const;
 	void addFile(RasterFile* file);
+
+	void grayScale();
+	void monochrome();
+	void negative();
+	void rotate(); // TODO: direction
 private:
 	unsigned _id = 0;
 	RasterFileContainer files;
-	TransformationContainer transformations;
 };
 

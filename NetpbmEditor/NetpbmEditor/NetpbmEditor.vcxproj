@@ -127,25 +127,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CommandContainer.cpp" />
     <ClCompile Include="Editor.cpp" />
+    <ClCompile Include="Engine.cpp" />
     <ClCompile Include="FileFactory.cpp" />
+    <ClCompile Include="GrayscaleCommand.cpp" />
+    <ClCompile Include="LoadCommand.cpp" />
+    <ClCompile Include="MonochromeCommand.cpp" />
+    <ClCompile Include="MyString.cpp" />
     <ClCompile Include="NetpbmEditor.cpp" />
+    <ClCompile Include="PBMFile.cpp" />
+    <ClCompile Include="PGMFile.cpp" />
+    <ClCompile Include="PPMFile.cpp" />
     <ClCompile Include="RasterFileContainer.cpp" />
     <ClCompile Include="Session.cpp" />
-    <ClCompile Include="TransformationContainer.cpp" />
-    <ClCompile Include="Transformations.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="CommandContainer.h" />
     <ClInclude Include="Editor.h" />
+    <ClInclude Include="Engine.h" />
     <ClInclude Include="FileFactory.h" />
+    <ClInclude Include="GrayscaleCommand.h" />
+    <ClInclude Include="LoadCommand.h" />
+    <ClInclude Include="MonochromeCommand.h" />
+    <ClInclude Include="MyString.h" />
     <ClInclude Include="PBMFile.h" />
     <ClInclude Include="PGMFile.h" />
     <ClInclude Include="PPMFile.h" />
     <ClInclude Include="RasterFile.h" />
     <ClInclude Include="RasterFileContainer.h" />
     <ClInclude Include="Session.h" />
-    <ClInclude Include="Transformation.h" />
-    <ClInclude Include="TransformationContainer.h" />
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

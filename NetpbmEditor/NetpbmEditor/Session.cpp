@@ -12,5 +12,15 @@ Session::Session(unsigned id)
 
 void Session::addFile(RasterFile* file) 
 {
-	files.add(file);
+	this->files.addFile(file);
+}
+
+void Session::grayScale() 
+{
+	//Here we apply grayScale for all files
+}
+
+void Session::monochrome() 
+{
+	//Here we apply monochrome for all files
 }

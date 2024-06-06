@@ -22,14 +22,14 @@
     <Filter Include="Header Files\Structures">
       <UniqueIdentifier>{0d3c49e3-ad96-4edd-82da-737fede435d7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Transformations">
-      <UniqueIdentifier>{5a9f2f71-9971-4ff2-8a09-946722e637aa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Transformations">
-      <UniqueIdentifier>{69ea0a3b-a9d8-4585-83d2-064239bd64f6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Structures">
       <UniqueIdentifier>{1ce93ce7-ab0c-4b13-bc4d-78041ff6a176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Commands">
+      <UniqueIdentifier>{cb40ddf4-655c-4807-a34d-2e1ad6555bef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Commands">
+      <UniqueIdentifier>{b883ecf1-fae2-48c4-a520-916537f2e548}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,17 +42,38 @@
     <ClCompile Include="Session.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Transformations.cpp">
-      <Filter>Source Files\Transformations</Filter>
-    </ClCompile>
     <ClCompile Include="FileFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RasterFileContainer.cpp">
       <Filter>Source Files\Structures</Filter>
     </ClCompile>
-    <ClCompile Include="TransformationContainer.cpp">
+    <ClCompile Include="GrayscaleCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="PBMFile.cpp">
+      <Filter>Source Files\FileModels</Filter>
+    </ClCompile>
+    <ClCompile Include="PGMFile.cpp">
+      <Filter>Source Files\FileModels</Filter>
+    </ClCompile>
+    <ClCompile Include="PPMFile.cpp">
+      <Filter>Source Files\FileModels</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandContainer.cpp">
       <Filter>Source Files\Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MonochromeCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="MyString.cpp">
+      <Filter>Source Files\Commands</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,16 +98,31 @@
     <ClInclude Include="PBMFile.h">
       <Filter>Header Files\FileModels</Filter>
     </ClInclude>
-    <ClInclude Include="Transformation.h">
-      <Filter>Header Files\Transformations</Filter>
-    </ClInclude>
     <ClInclude Include="FileFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RasterFileContainer.h">
       <Filter>Header Files\Structures</Filter>
     </ClInclude>
-    <ClInclude Include="TransformationContainer.h">
+    <ClInclude Include="Command.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="GrayscaleCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandContainer.h">
+      <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MonochromeCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="MyString.h">
       <Filter>Header Files\Structures</Filter>
     </ClInclude>
   </ItemGroup>

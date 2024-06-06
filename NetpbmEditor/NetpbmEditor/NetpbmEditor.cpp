@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Editor.h"
+#include "Engine.h"
 
 int main()
 {
-    Editor editor;
-    editor.load("file.ppm");
+	Engine engine;
+	engine.start();
 }

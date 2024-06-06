@@ -10,12 +10,15 @@ private:
 	Vector<Session> sessions;
 	unsigned indexOfCurrentSession = 0;
 public:
-	void save() const;
+	void save() const; // Goes through the commandsContainer and executes them
 	void saveAs(const char* newFileName) const;
 	void load(const char* fileName);
 	void close(unsigned sessionId);
 	void switchSession(unsigned sessionID);
 	void help() const;
 	void exit() const;
+	//TODO : undo just remove the last command
+	friend class GrayscaleCommand;
+	friend class MonochromeCommand;
 };
 
