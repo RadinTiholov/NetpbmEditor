@@ -14,6 +14,8 @@ public:
 	void monochrome();
 	void negative();
 	void rotate(); // TODO: direction
+
+	friend class Editor;
 private:
 	unsigned _id = 0;
 	RasterFileContainer files;

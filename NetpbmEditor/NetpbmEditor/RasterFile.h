@@ -1,4 +1,6 @@
 #pragma once
+#include "MyString.h"
+#include <fstream>
 
 enum class Encoding 
 {
@@ -13,12 +15,17 @@ protected:
 	unsigned width;
 	unsigned height;
 	Encoding encoding;
+	MyString fileName;
+	
 public:
 	virtual void grayscale() = 0;
 	virtual void monochrome() = 0;
 	virtual void negative() = 0;
 	virtual void rotate() = 0; //TODO: add direction
 
+	void writeMagicNumber(std::ofstream& is) const;
+	void writeWidthAndHeight(std::ofstream& is) const;
 	virtual RasterFile* clone() const = 0;
+	virtual void serialize() const = 0;
 	virtual ~RasterFile() = default;
 };

@@ -24,3 +24,8 @@ void PGMFile::rotate()
 {
 
 }
+
+void PGMFile::serialize() const 
+{
+
+}

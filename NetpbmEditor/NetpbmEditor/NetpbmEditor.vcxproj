@@ -141,6 +141,7 @@
     <ClCompile Include="PBMFile.cpp" />
     <ClCompile Include="PGMFile.cpp" />
     <ClCompile Include="PPMFile.cpp" />
+    <ClCompile Include="RasterFile.cpp" />
     <ClCompile Include="RasterFileContainer.cpp" />
     <ClCompile Include="Session.cpp" />
   </ItemGroup>

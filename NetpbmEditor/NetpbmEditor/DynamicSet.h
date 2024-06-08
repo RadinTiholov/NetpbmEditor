@@ -1,6 +1,7 @@
-// https://github.com/Angeld55
 #pragma once
 #include <iostream>
+#include <fstream>
+#include "Constants.h"
 
 class DynamicSet
 {
@@ -24,6 +25,8 @@ public:
 	void remove(unsigned num);
 	bool contains(unsigned num) const;
 	void print() const;
+	void serializeToAscii(std::ofstream& ofs) const;
+	void serializeToBinary(std::ofstream& ofs) const;
 	friend DynamicSet UnionOfSets(const DynamicSet& lhs, const DynamicSet& rhs);
 	friend DynamicSet IntersectionOfSets(const DynamicSet& lhs, const DynamicSet& rhs);
 

@@ -11,10 +11,12 @@ private:
 	void setWidth(unsigned newWidth);
 	void setHeigth(unsigned newHeight);
 public:
-	PBMFile(unsigned magicNumber, unsigned width, unsigned height, Encoding encoding, const DynamicSet& set);
+	PBMFile(unsigned magicNumber, unsigned width, unsigned height, Encoding encoding, const char* fileName, const DynamicSet& set);
 	void grayscale() override;
 	void monochrome() override;
 	void negative() override;
 	void rotate() override;
+
+	void serialize() const override;
 	RasterFile* clone() const override;
 };

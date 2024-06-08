@@ -9,4 +9,6 @@ public:
 	void monochrome() override;
 	void negative() override;
 	void rotate() override;
+
+	void serialize() const override;
 };

@@ -26,7 +26,7 @@ static int charToNumber(char c) {
 
 RasterFile* FileFactory::createFile(const char* fileName)
 {
-	//TODO: Refactory this piece of shit
+	//TODO: Refactor this
 	std::ifstream ifs(fileName);
 	if (!ifs.is_open())
 	{
@@ -57,7 +57,7 @@ RasterFile* FileFactory::createFile(const char* fileName)
 			ifs.getline(buffer, 4096);
 			extractLine(bitset, buffer, index);
 		}
-		PBMFile* file = new PBMFile(charToNumber(magicNumber[1]), width, height, Encoding::ASCII, bitset);
+		PBMFile* file = new PBMFile(charToNumber(magicNumber[1]), width, height, Encoding::ASCII, fileName, bitset);
 		return file;
 	}
 	case '2':

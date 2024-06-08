@@ -9,8 +9,10 @@ class Editor
 private:
 	Vector<Session> sessions;
 	unsigned indexOfCurrentSession = 0;
+
+	void serializeFile(const RasterFile*) const;
 public:
-	void save() const; // Goes through the commandsContainer and executes them
+	void serializeAllFilesInCurrentSession() const;
 	void saveAs(const char* newFileName) const;
 	void load(const char* fileName);
 	void close(unsigned sessionId);

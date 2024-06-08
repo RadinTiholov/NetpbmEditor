@@ -4,6 +4,8 @@
 #include "GrayscaleCommand.h"
 #include "MonochromeCommand.h"
 #include "LoadCommand.h"
+#include "Constants.h"
+#include <sstream>
 
 class Engine
 {
@@ -13,6 +15,7 @@ private:
 	Editor editor;
 	CommandContainer commands;
 
-	void saveCommand();
+	void parseCommandsFrom(std::istream& ifs);
+	void executeCommands();
 };
 

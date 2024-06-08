@@ -24,3 +24,8 @@ void PPMFile::rotate()
 {
 
 }
+
+void PPMFile::serialize() const
+{
+
+}

@@ -85,6 +85,34 @@ bool DynamicSet::contains(unsigned num) const
 	return buckets[bucketIndex] & mask;
 }
 
+void DynamicSet::serializeToAscii(std::ofstream& ofs) const
+{
+	if (!ofs.is_open())
+	{
+		throw std::runtime_error(Constants::COULD_NOT_OPEN_FILE_ERROR_MESSAGE);
+	}
+	for (int i = 0; i <= N; i++)
+	{
+		if (contains(i)) 
+		{
+			ofs << 1;
+		}
+		else
+		{
+			ofs << 0;
+		}
+	}
+}
+
+void DynamicSet::serializeToBinary(std::ofstream& ofs) const 
+{
+	if (!ofs.is_open())
+	{
+		throw std::runtime_error(Constants::COULD_NOT_OPEN_FILE_ERROR_MESSAGE);
+	}
+	//TODO: Write here
+}
+
 void DynamicSet::print() const
 {
 	std::cout << '{';
