@@ -15,7 +15,7 @@ class DynamicSet
 	unsigned getBucketIndex(unsigned num) const;
 public:
 	DynamicSet(unsigned n);
-
+	DynamicSet();
 	DynamicSet(const DynamicSet& other);
 	DynamicSet& operator=(const DynamicSet& other);
 	~DynamicSet();

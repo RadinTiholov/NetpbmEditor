@@ -7,6 +7,13 @@ DynamicSet::DynamicSet(unsigned N)
 	this->N = N;
 }
 
+DynamicSet::DynamicSet()
+{
+	this->N = 0;
+	bucketsCount = 0;
+	buckets = nullptr;
+}
+
 void DynamicSet::free()
 {
 	delete[] buckets;//!!!

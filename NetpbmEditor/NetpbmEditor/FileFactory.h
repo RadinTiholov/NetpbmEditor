@@ -1,6 +1,10 @@
 #pragma once
 #include "RasterFile.h"
+#include "DynamicSet.h"
 #include "Constants.h"
+#include "PBMFile.h"
+#include "PPMFile.h"
+#include "PGMFile.h"
 #include <fstream>
 
 class FileFactory

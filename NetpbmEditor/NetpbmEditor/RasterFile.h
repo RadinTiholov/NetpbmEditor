@@ -1,11 +1,18 @@
 #pragma once
 
+enum class Encoding 
+{
+	ASCII,
+	Binary
+};
+
 class RasterFile 
 {
 protected:
 	unsigned magicNumber;
 	unsigned width;
 	unsigned height;
+	Encoding encoding;
 public:
 	virtual void grayscale() = 0;
 	virtual void monochrome() = 0;

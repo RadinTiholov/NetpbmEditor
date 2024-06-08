@@ -17,7 +17,7 @@ void Engine::start()
 
 void Engine::saveCommand()
 {
-    // Here we execute the commands consequential
+    // Here we execute the commands consequentialy
     for (size_t i = 0; i < this->commands.getSize(); i++)
     {
         this->commands[i]->execute(this->editor);
