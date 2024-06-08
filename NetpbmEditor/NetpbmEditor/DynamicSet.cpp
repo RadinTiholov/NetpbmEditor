@@ -104,15 +104,6 @@ void DynamicSet::serializeToAscii(std::ofstream& ofs) const
 	}
 }
 
-void DynamicSet::serializeToBinary(std::ofstream& ofs) const 
-{
-	if (!ofs.is_open())
-	{
-		throw std::runtime_error(Constants::COULD_NOT_OPEN_FILE_ERROR_MESSAGE);
-	}
-	//TODO: Write here
-}
-
 void DynamicSet::print() const
 {
 	std::cout << '{';
@@ -123,29 +114,4 @@ void DynamicSet::print() const
 	}
 
 	std::cout << '}' << std::endl;
-}
-
-DynamicSet UnionOfSets(const DynamicSet& lhs, const DynamicSet& rhs)
-{
-	DynamicSet result(std::max(lhs.N, rhs.N));
-
-	unsigned minBucketsCount = std::min(lhs.bucketsCount, rhs.bucketsCount);
-	for (int i = 0; i < minBucketsCount; i++)
-		result.buckets[i] = lhs.buckets[i] | rhs.buckets[i];
-
-	const DynamicSet& biggerN = lhs.bucketsCount > rhs.bucketsCount ? lhs : rhs; //no copy here
-
-	for (int i = minBucketsCount; i < biggerN.bucketsCount; i++)
-		result.buckets[i] = biggerN.buckets[i];
-	return result;
-}
-
-DynamicSet IntersectionOfSets(const DynamicSet& lhs, const DynamicSet& rhs)
-{
-	DynamicSet result(std::min(lhs.N, rhs.N));
-
-	unsigned minBucketsCount = std::min(lhs.bucketsCount, rhs.bucketsCount);
-	for (int i = 0; i < minBucketsCount; i++)
-		result.buckets[i] = lhs.buckets[i] & rhs.buckets[i];
-	return result;
 }

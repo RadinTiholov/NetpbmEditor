@@ -26,8 +26,4 @@ public:
 	bool contains(unsigned num) const;
 	void print() const;
 	void serializeToAscii(std::ofstream& ofs) const;
-	void serializeToBinary(std::ofstream& ofs) const;
-	friend DynamicSet UnionOfSets(const DynamicSet& lhs, const DynamicSet& rhs);
-	friend DynamicSet IntersectionOfSets(const DynamicSet& lhs, const DynamicSet& rhs);
-
 };
