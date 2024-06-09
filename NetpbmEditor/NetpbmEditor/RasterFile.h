@@ -1,5 +1,6 @@
 #pragma once
 #include "MyString.h"
+#include "Constants.h"
 #include <fstream>
 
 enum class Encoding 
@@ -16,7 +17,10 @@ protected:
 	unsigned height;
 	Encoding encoding;
 	MyString fileName;
-	
+
+	void setMagicNumber(unsigned newMagicNumber);
+	void setWidth(unsigned newWidth);
+	void setHeigth(unsigned newHeight);
 public:
 	virtual void grayscale() = 0;
 	virtual void monochrome() = 0;

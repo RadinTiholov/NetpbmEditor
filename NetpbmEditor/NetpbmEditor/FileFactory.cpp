@@ -93,10 +93,19 @@ RasterFile* FileFactory::createFile(const char* fileName)
 		return file;
 	}
 	case '2':
+	{
 		unsigned maxValue;
 		ifs >> maxValue;
-
-		break;
+		Vector<uint16_t> values;
+		for (size_t i = 0; i < height * width; i++)
+		{
+			uint16_t value;
+			ifs >> value;
+			values.pushBack(value);
+		}
+		PGMFile* file = new PGMFile(charToNumber(magicNumber[1]), width, height, Encoding::ASCII, fileName, maxValue, values);
+		return file;
+	}
 	case '3':
 		break;
 	case '4':

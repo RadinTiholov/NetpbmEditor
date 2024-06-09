@@ -1,7 +1,6 @@
 #pragma once
 #include "RasterFile.h"
 #include "DynamicSet.h"
-#include "Constants.h"
 
 class PBMFile : public RasterFile
 {
@@ -16,9 +15,6 @@ public:
 	RasterFile* clone() const override;
 private:
 	DynamicSet content;
-	void setMagicNumber(unsigned newMagicNumber);
-	void setWidth(unsigned newWidth);
-	void setHeigth(unsigned newHeight);
 	void serializeContentToBinary(std::ofstream& ofs) const;
 	void adjustByteWithExcessBits(int& startBit, uint8_t*& bytes, int excessBits, int currentByteIndex) const;
 	void adjustByteWithoutExcessBits(int& startBit, uint8_t*& bytes, int currentByteIndex) const;

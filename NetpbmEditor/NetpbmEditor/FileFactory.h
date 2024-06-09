@@ -6,6 +6,7 @@
 #include "PPMFile.h"
 #include "PGMFile.h"
 #include <fstream>
+#include "Vector.hpp"
 
 class FileFactory
 {
