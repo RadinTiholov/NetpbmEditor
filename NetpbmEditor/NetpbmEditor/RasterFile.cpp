@@ -6,5 +6,5 @@ void RasterFile::writeMagicNumber(std::ofstream& ofs) const
 }
 void RasterFile::writeWidthAndHeight(std::ofstream& ofs) const
 {
-	ofs << this->width << ' ' << this->height << '\n';
+	ofs << this->width << ' ' << this->height << ' ';
 }

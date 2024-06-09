@@ -1,5 +1,10 @@
 #include "PBMFile.h"
 
+static bool canContainExcessBits(int currentByte, int bytesPerRow)
+{
+	return currentByte % bytesPerRow == 0;
+}
+
 PBMFile::PBMFile(unsigned magicNumber, unsigned width, unsigned height, Encoding encoding, const char* fileName, const DynamicSet& set)
 {
 	setMagicNumber(magicNumber);
@@ -39,31 +44,29 @@ void PBMFile::setHeigth(unsigned newHeight)
 
 void PBMFile::serialize() const
 {
-	//std::ofstream ofs(this->fileName.c_str());
-	std::ofstream ofs("edno.pbm");
+	std::ofstream ofs(this->fileName.c_str());
 	if (!ofs.is_open())
 	{
 		throw std::runtime_error(Constants::COULD_NOT_OPEN_FILE_ERROR_MESSAGE);
 	}
-	this->content.print();
-	
 	this->writeMagicNumber(ofs);
 	this->writeWidthAndHeight(ofs);
-	//if (this->encoding == Encoding::ASCII)
-	//{
-	//	this->content.serializeToAscii(ofs);
-	//}
-	//else if(this->encoding == Encoding::Binary)
-	//{
-	
-	//}
+	if (this->encoding == Encoding::ASCII)
+	{
+		this->content.serializeToAscii(ofs);
+	}
+	else if (this->encoding == Encoding::Binary)
+	{
+		ofs.close();
+		ofs.open(this->fileName.c_str(), std::ios::binary | std::ios::app);
 
-	ofs.close();
-	//ofs.open(this->fileName.c_str(), std::ios::binary | std::ios::app);
-	// 
-	ofs.open("edno.pbm", std::ios::binary | std::ios::app);
-	//this->content.serializeToBinary(ofs);
+		this->serializeContentToBinary(ofs);
+		ofs.close();
+	}
+}
 
+void PBMFile::serializeContentToBinary(std::ofstream& ofs) const
+{
 	int bytesPerRow = width / 8;
 	int excessBits = 0;
 	if (width % 8 != 0)
@@ -77,44 +80,50 @@ void PBMFile::serialize() const
 	int startBit = 0;
 	for (int i = 0; i < neededBytes; i++)
 	{
-		if ((i + 1) % bytesPerRow == 0)
+		if (canContainExcessBits(i + 1, bytesPerRow))
 		{
-			// byte with excess bits
-			int mask = 128;
-			for (int j = startBit; j < startBit + 8 - excessBits; j++)
-			{
-				if (this->content.contains(j))
-				{
-					bytes[i] |= mask;
-				}
-				mask >>= 1;
-			}
-			//
-			for (int j = startBit + 8 - excessBits; j < startBit + 8; j++)
-			{
-				bytes[i] |= mask;
-				mask >>= 1;
-			}
-			//
-			startBit += 8 - excessBits;
+			adjustByteWithExcessBits(startBit, bytes, excessBits, i);
 		}
 		else
 		{
-			// adjust the byte
-			int mask = 128;
-			for (int j = startBit; j < startBit + 8; j++)
-			{
-				if (this->content.contains(j))
-				{
-					bytes[i] |= mask;
-				}
-				mask >>= 1;
-			}
-			startBit += 8;
+			adjustByteWithoutExcessBits(startBit, bytes, i);
 		}
 	}
 	ofs.write(reinterpret_cast<const char*>(bytes), neededBytes);
 	delete[] bytes;
+}
+
+void PBMFile::adjustByteWithoutExcessBits(int& startBit, uint8_t*& bytes, int currentByteIndex) const
+{
+	int mask = 128;
+	for (int j = startBit; j < startBit + 8; j++)
+	{
+		if (this->content.contains(j))
+		{
+			bytes[currentByteIndex] |= mask;
+		}
+		mask >>= 1;
+	}
+	startBit += 8;
+}
+
+void PBMFile::adjustByteWithExcessBits(int& startBit, uint8_t*& bytes, int excessBits, int currentByteIndex) const
+{
+	int mask = 128;
+	for (int j = startBit; j < startBit + 8 - excessBits; j++)
+	{
+		if (this->content.contains(j))
+		{
+			bytes[currentByteIndex] |= mask;
+		}
+		mask >>= 1;
+	}
+	for (int j = startBit + 8 - excessBits; j < startBit + 8; j++)
+	{
+		bytes[currentByteIndex] |= mask;
+		mask >>= 1;
+	}
+	startBit += 8 - excessBits;
 }
 
 RasterFile* PBMFile::clone() const

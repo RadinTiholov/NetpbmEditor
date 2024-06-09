@@ -1,0 +1,15 @@
+﻿  CommandContainer.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(76,20): warning C4018: '<': signed/unsigned mismatch
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(85,20): warning C4018: '<': signed/unsigned mismatch
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(106,20): warning C4018: '<': signed/unsigned mismatch
+  Editor.cpp
+  Engine.cpp
+  FileFactory.cpp
+  GrayscaleCommand.cpp
+  LoadCommand.cpp
+  MonochromeCommand.cpp
+  NetpbmEditor.cpp
+  PBMFile.cpp
+  Generating Code...
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(79): warning C4715: 'FileFactory::createFile': not all control paths return a value
+  NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\Debug\NetpbmEditor.exe
