@@ -1,5 +1,38 @@
 #include "FileFactory.h"
 
+static bool canContainExcessBits(int currentByte, int bytesPerRow)
+{
+	return currentByte % bytesPerRow == 0;
+}
+
+static void extractBitsFromByteWithExcessBits(int& index, int currentByte, const uint8_t* rawBytes, DynamicSet& bitset, int excessBits) 
+{
+	int mask = 128;
+	for (int j = index; j < index + 8 - excessBits; j++)
+	{
+		if (mask & rawBytes[currentByte])
+		{
+			bitset.add(j);
+		}
+		mask >>= 1;
+	}
+	index += 8 - excessBits;
+}
+
+static void extractBitsFromByteWithoutExcessBits(int& index, int currentByte, const uint8_t* rawBytes, DynamicSet& bitset)
+{
+	int mask = 128;
+	for (int j = index; j < index + 8; j++)
+	{
+		if (mask & rawBytes[currentByte])
+		{
+			bitset.add(j);
+		}
+		mask >>= 1;
+	}
+	index += 8;
+}
+
 static void extractLine(DynamicSet& bitset, const char* line, unsigned& index) 
 {
 	while (*line)
@@ -60,6 +93,9 @@ RasterFile* FileFactory::createFile(const char* fileName)
 		return file;
 	}
 	case '2':
+		unsigned maxValue;
+		ifs >> maxValue;
+
 		break;
 	case '3':
 		break;
@@ -91,31 +127,13 @@ RasterFile* FileFactory::createFile(const char* fileName)
 		int index = 0;
 		for (size_t i = 0; i < neededBytes; i++)
 		{
-			if ((i + 1) % bytesPerRow == 0)
+			if (canContainExcessBits(i + 1, bytesPerRow))
 			{
-				int mask = 128;
-				for (int j = index; j < index + 8 - excessBits; j++)
-				{
-					if (mask & rawBytes[i])
-					{
-						bitset.add(j);
-					}
-					mask >>= 1;
-				}
-				index += 8 - excessBits;
+				extractBitsFromByteWithExcessBits(index, i, rawBytes, bitset, excessBits);
 			}
 			else 
 			{
-				int mask = 128;
-				for (int j = index; j < index + 8; j++)
-				{
-					if (mask & rawBytes[i])
-					{
-						bitset.add(j);
-					}
-					mask >>= 1;
-				}
-				index += 8;
+				extractBitsFromByteWithoutExcessBits(index, i, rawBytes, bitset);
 			}
 		}
 		PBMFile* file = new PBMFile(charToNumber(magicNumber[1]), width, height, Encoding::Binary, fileName, bitset);
