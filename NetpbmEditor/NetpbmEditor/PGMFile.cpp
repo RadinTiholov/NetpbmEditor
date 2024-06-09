@@ -13,7 +13,7 @@ PGMFile::PGMFile(unsigned magicNumber, unsigned width, unsigned height, Encoding
 
 void PGMFile::setMaxValue(unsigned maxValue)
 {
-	if (maxValue > 255)
+	if (maxValue > INT16_MAX)
 	{
 		throw std::invalid_argument(Constants::INVALID_MAXVALUE);
 	}
@@ -68,8 +68,21 @@ void PGMFile::serialize() const
 	{
 		ofs.close();
 		ofs.open(this->fileName.c_str(), std::ios::binary | std::ios::app);
-
+		this->serializeContentToBinary(ofs);
+		ofs.close();
 	}
+}
+
+void PGMFile::serializeContentToBinary(std::ofstream& ofs) const 
+{
+	size_t size = this->content.getSize();
+	uint8_t* bytes = new uint8_t[size];
+	for (size_t i = 0; i < size; i++)
+	{
+		bytes[i] = this->content[i];
+	}
+	ofs.write(reinterpret_cast<const char*>(bytes), size);
+	delete[] bytes;
 }
 
 void PGMFile::writeMaxValue(std::ofstream& ofs) const

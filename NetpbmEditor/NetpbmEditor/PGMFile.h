@@ -4,11 +4,6 @@
 
 class PGMFile : public RasterFile
 {
-private:
-	unsigned maxValue = 0;
-	Vector<uint16_t> content;
-	void setMaxValue(unsigned maxValue);
-	void writeMaxValue(std::ofstream& ofs) const;
 public:
 	PGMFile(unsigned magicNumber, unsigned width, unsigned height, Encoding encoding, const char* fileName, unsigned maxValue, Vector<uint16_t> values);
 	RasterFile* clone() const override;
@@ -18,4 +13,11 @@ public:
 	void rotate() override;
 
 	void serialize() const override;
+private:
+	unsigned maxValue = 0;
+	Vector<uint16_t> content;
+	void setMaxValue(unsigned maxValue);
+	void writeMaxValue(std::ofstream& ofs) const;
+
+	void serializeContentToBinary(std::ofstream& ofs) const;
 };

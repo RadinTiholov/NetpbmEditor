@@ -11,4 +11,6 @@ public:
 	void rotate() override;
 
 	void serialize() const override;
+private:
+
 };

@@ -16,5 +16,6 @@ private:
 	static PBMFile* createPBMASCIIFile(int height, int width, int magicNumber, std::ifstream& ifs, const char* fileName);
 	static PBMFile* createPBMBinaryFile(int height, int width, int magicNumber, std::ifstream& ifs, const char* fileName);
 	static PGMFile* createPGMASCIIFile(int height, int width, int magicNumber, std::ifstream& ifs, const char* fileName);
+	static PGMFile* createPGMBinaryFile(int height, int width, int magicNumber, std::ifstream& ifs, const char* fileName);
 };
 

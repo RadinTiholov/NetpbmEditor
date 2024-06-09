@@ -125,7 +125,16 @@ PGMFile* FileFactory::createPGMASCIIFile(int height, int width, int magicNumber,
 		values.pushBack(value);
 	}
 	PGMFile* file = new PGMFile(magicNumber, width, height, Encoding::ASCII, fileName, maxValue, values);
+	//PGMFile* file = new PGMFile(5, width, height, Encoding::Binary, fileName, maxValue, values);
 	return file;
+}
+
+PGMFile* FileFactory::createPGMBinaryFile(int height, int width, int magicNumber, std::ifstream& ifs, const char* fileName) 
+{
+	unsigned maxValue;
+	ifs >> maxValue;
+	// TODO
+	return nullptr;
 }
 
 RasterFile* FileFactory::createFile(const char* fileName)
@@ -165,8 +174,9 @@ RasterFile* FileFactory::createFile(const char* fileName)
 		return createPBMBinaryFile(height, width, charToNumber(magicNumber[1]), ifs, fileName);
 	}
 	case '5':
-		ifs.close();
-		break;
+	{
+		return createPGMBinaryFile(height, width, charToNumber(magicNumber[1]), ifs, fileName);
+	}
 	case '6':
 		ifs.close();
 		break;
