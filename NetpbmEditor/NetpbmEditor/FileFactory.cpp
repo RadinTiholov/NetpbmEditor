@@ -26,7 +26,6 @@ static int charToNumber(char c) {
 
 RasterFile* FileFactory::createFile(const char* fileName)
 {
-	//TODO: Refactor this
 	std::ifstream ifs(fileName);
 	if (!ifs.is_open())
 	{
@@ -65,8 +64,64 @@ RasterFile* FileFactory::createFile(const char* fileName)
 	case '3':
 		break;
 	case '4':
+	{
+		size_t startPosition = ifs.tellg();
 		ifs.close();
-		break;
+		ifs.open(fileName, std::ios::binary);
+		if (!ifs.is_open())
+		{
+			throw std::runtime_error(Constants::COULD_NOT_OPEN_FILE_ERROR_MESSAGE);
+		}
+		ifs.seekg(startPosition);
+
+		DynamicSet bitset(height * width);
+
+		int bytesPerRow = width / 8;
+		int excessBits = 0;
+		if (width % 8 != 0)
+		{
+			bytesPerRow += 1;
+			excessBits = 8 - width % 8;
+		}
+		int neededBytes = bytesPerRow * height;
+		uint8_t* rawBytes = new uint8_t[neededBytes];
+		ifs.read((char*)rawBytes, neededBytes);
+
+		// Parse to dynamic set
+		int index = 0;
+		for (size_t i = 0; i < neededBytes; i++)
+		{
+			if ((i + 1) % bytesPerRow == 0)
+			{
+				int mask = 128;
+				for (int j = index; j < index + 8 - excessBits; j++)
+				{
+					if (mask & rawBytes[i])
+					{
+						bitset.add(j);
+					}
+					mask >>= 1;
+				}
+				index += 8 - excessBits;
+			}
+			else 
+			{
+				int mask = 128;
+				for (int j = index; j < index + 8; j++)
+				{
+					if (mask & rawBytes[i])
+					{
+						bitset.add(j);
+					}
+					mask >>= 1;
+				}
+				index += 8;
+			}
+		}
+		PBMFile* file = new PBMFile(charToNumber(magicNumber[1]), width, height, Encoding::Binary, fileName, bitset);
+		delete[] rawBytes;
+		return file;
+	}
 	case '5':
 		ifs.close();
 		break;

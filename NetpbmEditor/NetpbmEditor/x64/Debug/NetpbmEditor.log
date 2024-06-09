@@ -1,13 +1,3 @@
-﻿  CommandContainer.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(71,13): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
-  Editor.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Editor.cpp(7,61): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Editor.cpp(24,20): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-  Engine.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Engine.cpp(42,24): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-  FileFactory.cpp
-  GrayscaleCommand.cpp
-  LoadCommand.cpp
-  NetpbmEditor.cpp
-  Generating Code...
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\LoadCommand.cpp : fatal  error C1090: PDB API call failed, error code '3': D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\x64\Debug\vc143.pdb
+﻿  FileFactory.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(136): warning C4715: 'FileFactory::createFile': not all control paths return a value
+  NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\x64\Debug\NetpbmEditor.exe

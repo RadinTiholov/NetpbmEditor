@@ -53,6 +53,7 @@ void PBMFile::serialize() const
 	this->writeWidthAndHeight(ofs);
 	if (this->encoding == Encoding::ASCII)
 	{
+		ofs << '\n';
 		this->content.serializeToAscii(ofs);
 	}
 	else if (this->encoding == Encoding::Binary)
