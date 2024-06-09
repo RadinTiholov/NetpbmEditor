@@ -57,6 +57,77 @@ static int charToNumber(char c) {
 	return -1;
 }
 
+PBMFile* FileFactory::createPBMASCIIFile(int height, int width, int magicNumber, std::ifstream& ifs, const char* fileName)
+{
+	DynamicSet bitset(height * width);
+	unsigned index = 0;
+	while (!ifs.eof())
+	{
+		char buffer[4096];
+		ifs.getline(buffer, 4096);
+		extractLine(bitset, buffer, index);
+	}
+	PBMFile* file = new PBMFile(magicNumber, width, height, Encoding::ASCII, fileName, bitset);
+	return file;
+}
+
+PBMFile* FileFactory::createPBMBinaryFile(int height, int width, int magicNumber, std::ifstream& ifs, const char* fileName) 
+{
+	size_t startPosition = ifs.tellg();
+	ifs.close();
+	ifs.open(fileName, std::ios::binary);
+	if (!ifs.is_open())
+	{
+		throw std::runtime_error(Constants::COULD_NOT_OPEN_FILE_ERROR_MESSAGE);
+	}
+	ifs.seekg(startPosition);
+
+	DynamicSet bitset(height * width);
+
+	int bytesPerRow = width / 8;
+	int excessBits = 0;
+	if (width % 8 != 0)
+	{
+		bytesPerRow += 1;
+		excessBits = 8 - width % 8;
+	}
+	int neededBytes = bytesPerRow * height;
+	uint8_t* rawBytes = new uint8_t[neededBytes];
+	ifs.read((char*)rawBytes, neededBytes);
+
+	// Parse to dynamic set
+	int index = 0;
+	for (size_t i = 0; i < neededBytes; i++)
+	{
+		if (canContainExcessBits(i + 1, bytesPerRow))
+		{
+			extractBitsFromByteWithExcessBits(index, i, rawBytes, bitset, excessBits);
+		}
+		else
+		{
+			extractBitsFromByteWithoutExcessBits(index, i, rawBytes, bitset);
+		}
+	}
+	PBMFile* file = new PBMFile(magicNumber, width, height, Encoding::Binary, fileName, bitset);
+	delete[] rawBytes;
+	return file;
+}
+
+PGMFile* FileFactory::createPGMASCIIFile(int height, int width, int magicNumber, std::ifstream& ifs, const char* fileName)
+{
+	unsigned maxValue;
+	ifs >> maxValue;
+	Vector<uint16_t> values;
+	for (size_t i = 0; i < height * width; i++)
+	{
+		uint16_t value;
+		ifs >> value;
+		values.pushBack(value);
+	}
+	PGMFile* file = new PGMFile(magicNumber, width, height, Encoding::ASCII, fileName, maxValue, values);
+	return file;
+}
+
 RasterFile* FileFactory::createFile(const char* fileName)
 {
 	std::ifstream ifs(fileName);
@@ -81,73 +152,17 @@ RasterFile* FileFactory::createFile(const char* fileName)
 	{
 	case '1':
 	{
-		DynamicSet bitset(height * width);
-		unsigned index = 0;
-		while (!ifs.eof())
-		{
-			char buffer[4096];
-			ifs.getline(buffer, 4096);
-			extractLine(bitset, buffer, index);
-		}
-		PBMFile* file = new PBMFile(charToNumber(magicNumber[1]), width, height, Encoding::ASCII, fileName, bitset);
-		return file;
+		return createPBMASCIIFile(height, width, charToNumber(magicNumber[1]), ifs, fileName);
 	}
 	case '2':
 	{
-		unsigned maxValue;
-		ifs >> maxValue;
-		Vector<uint16_t> values;
-		for (size_t i = 0; i < height * width; i++)
-		{
-			uint16_t value;
-			ifs >> value;
-			values.pushBack(value);
-		}
-		PGMFile* file = new PGMFile(charToNumber(magicNumber[1]), width, height, Encoding::ASCII, fileName, maxValue, values);
-		return file;
+		return createPGMASCIIFile(height, width, charToNumber(magicNumber[1]), ifs, fileName);
 	}
 	case '3':
 		break;
 	case '4':
 	{
-		size_t startPosition = ifs.tellg();
-		ifs.close();
-		ifs.open(fileName, std::ios::binary);
-		if (!ifs.is_open())
-		{
-			throw std::runtime_error(Constants::COULD_NOT_OPEN_FILE_ERROR_MESSAGE);
-		}
-		ifs.seekg(startPosition);
-
-		DynamicSet bitset(height * width);
-
-		int bytesPerRow = width / 8;
-		int excessBits = 0;
-		if (width % 8 != 0)
-		{
-			bytesPerRow += 1;
-			excessBits = 8 - width % 8;
-		}
-		int neededBytes = bytesPerRow * height;
-		uint8_t* rawBytes = new uint8_t[neededBytes];
-		ifs.read((char*)rawBytes, neededBytes);
-
-		// Parse to dynamic set
-		int index = 0;
-		for (size_t i = 0; i < neededBytes; i++)
-		{
-			if (canContainExcessBits(i + 1, bytesPerRow))
-			{
-				extractBitsFromByteWithExcessBits(index, i, rawBytes, bitset, excessBits);
-			}
-			else 
-			{
-				extractBitsFromByteWithoutExcessBits(index, i, rawBytes, bitset);
-			}
-		}
-		PBMFile* file = new PBMFile(charToNumber(magicNumber[1]), width, height, Encoding::Binary, fileName, bitset);
-		delete[] rawBytes;
-		return file;
+		return createPBMBinaryFile(height, width, charToNumber(magicNumber[1]), ifs, fileName);
 	}
 	case '5':
 		ifs.close();
