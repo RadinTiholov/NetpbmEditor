@@ -156,6 +156,35 @@ PGMFile* FileFactory::createPGMBinaryFile(int height, int width, int magicNumber
 	return file;
 }
 
+PPMFile* FileFactory::createPPMASCIIFile(int height, int width, int magicNumber, std::ifstream& ifs, const char* fileName)
+{
+	unsigned maxValue;
+	ifs >> maxValue;
+	Vector<RGBData> values(height * width);
+
+	for (size_t i = 0; i < height * width; i++)
+	{
+		uint16_t red;
+		uint16_t green;
+		uint16_t blue;
+		ifs >> red;
+		ifs >> green;
+		ifs >> blue;
+		values.pushBack(RGBData(red, green, blue));
+	}
+
+	PPMFile* file = new PPMFile(magicNumber, width, height, Encoding::ASCII, fileName, maxValue, values);
+	return file;
+}
+
+PPMFile* FileFactory::createPPMBinaryFile(int height, int width, int magicNumber, std::ifstream& ifs, const char* fileName)
+{
+	unsigned maxValue;
+	ifs >> maxValue;
+
+	return nullptr;
+}
+
 RasterFile* FileFactory::createFile(const char* fileName)
 {
 	std::ifstream ifs(fileName);
@@ -187,7 +216,9 @@ RasterFile* FileFactory::createFile(const char* fileName)
 		return createPGMASCIIFile(height, width, charToNumber(magicNumber[1]), ifs, fileName);
 	}
 	case '3':
-		break;
+	{
+		return createPPMASCIIFile(height, width, charToNumber(magicNumber[1]), ifs, fileName);
+	}
 	case '4':
 	{
 		return createPBMBinaryFile(height, width, charToNumber(magicNumber[1]), ifs, fileName);
@@ -197,8 +228,9 @@ RasterFile* FileFactory::createFile(const char* fileName)
 		return createPGMBinaryFile(height, width, charToNumber(magicNumber[1]), ifs, fileName);
 	}
 	case '6':
-		ifs.close();
-		break;
+	{
+		return createPPMBinaryFile(height, width, charToNumber(magicNumber[1]), ifs, fileName);
+	}
 	default:
 		break;
 	}

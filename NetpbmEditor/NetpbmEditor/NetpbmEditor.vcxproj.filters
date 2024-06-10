@@ -90,6 +90,9 @@
     <ClCompile Include="RasterFile.cpp">
       <Filter>Source Files\FileModels</Filter>
     </ClCompile>
+    <ClCompile Include="RGBData.cpp">
+      <Filter>Source Files\FileModels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Editor.h">
@@ -145,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="DynamicSet.h">
       <Filter>Header Files\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="RGBData.h">
+      <Filter>Header Files\FileModels</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
