@@ -124,8 +124,8 @@ PGMFile* FileFactory::createPGMASCIIFile(int height, int width, int magicNumber,
 		ifs >> value;
 		values.pushBack(value);
 	}
-	PGMFile* file = new PGMFile(magicNumber, width, height, Encoding::ASCII, fileName, maxValue, values);
-	//PGMFile* file = new PGMFile(5, width, height, Encoding::Binary, fileName, maxValue, values);
+	//PGMFile* file = new PGMFile(magicNumber, width, height, Encoding::ASCII, fileName, maxValue, values);
+	PGMFile* file = new PGMFile(5, width, height, Encoding::Binary, fileName, maxValue, values);
 	return file;
 }
 

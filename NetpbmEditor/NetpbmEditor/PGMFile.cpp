@@ -76,13 +76,23 @@ void PGMFile::serialize() const
 void PGMFile::serializeContentToBinary(std::ofstream& ofs) const 
 {
 	size_t size = this->content.getSize();
-	uint8_t* bytes = new uint8_t[size];
-	for (size_t i = 0; i < size; i++)
+
+	if (this->maxValue <= UINT8_MAX)
 	{
-		bytes[i] = this->content[i];
+		for (size_t i = 0; i < size; i++)
+		{
+			uint8_t value = this->content[i];
+			ofs.write(reinterpret_cast<const char*>(&value), sizeof(uint8_t));
+		}
 	}
-	ofs.write(reinterpret_cast<const char*>(bytes), size);
-	delete[] bytes;
+	else
+	{
+		for (size_t i = 0; i < size; i++)
+		{
+			uint16_t value = this->content[i];
+			ofs.write(reinterpret_cast<const char*>(&value), sizeof(uint16_t));
+		}
+	}
 }
 
 void PGMFile::writeMaxValue(std::ofstream& ofs) const
