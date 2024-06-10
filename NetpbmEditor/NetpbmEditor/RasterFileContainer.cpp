@@ -101,6 +101,11 @@ const RasterFile* RasterFileContainer::operator[](unsigned ind) const
 	return data[ind];
 }
 
+RasterFile* RasterFileContainer::operator[](unsigned ind)
+{
+	return data[ind];
+}
+
 unsigned RasterFileContainer::getSize() const 
 {
 	return this->size;

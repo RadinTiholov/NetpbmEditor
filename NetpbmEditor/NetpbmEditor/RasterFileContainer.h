@@ -16,6 +16,7 @@ public:
 	void addFile(const RasterFile& shape);
 
 	const RasterFile* operator[](unsigned) const;
+	RasterFile* operator[](unsigned);
 	unsigned getSize() const;
 private:
 	void free();

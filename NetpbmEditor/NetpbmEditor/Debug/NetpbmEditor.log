@@ -1,29 +1,6 @@
-﻿  CommandContainer.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(76,20): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(85,20): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(106,20): warning C4018: '<': signed/unsigned mismatch
-  Constants.cpp
-  DynamicSet.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\DynamicSet.cpp(94,20): warning C4018: '<=': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\DynamicSet.cpp(110,20): warning C4018: '<=': signed/unsigned mismatch
-  Editor.cpp
-  Engine.cpp
-  FileFactory.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(5,20): warning C4244: 'initializing': conversion from 'std::streamoff' to 'size_t', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(7,18): warning C4244: 'initializing': conversion from 'std::streamoff' to 'size_t', possible loss of data
-  GrayscaleCommand.cpp
-  LoadCommand.cpp
-  MonochromeCommand.cpp
-  MyString.cpp
-  NetpbmEditor.cpp
-  PBMFile.cpp
-  PGMFile.cpp
-  PPMFile.cpp
-  RasterFile.cpp
-  RasterFileContainer.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\RasterFileContainer.cpp(48,20): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\RasterFileContainer.cpp(57,20): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\RasterFileContainer.cpp(78,20): warning C4018: '<': signed/unsigned mismatch
-  Session.cpp
-  Generating Code...
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp : fatal  error C1090: PDB API call failed, error code '3': D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Debug\vc143.pdb
+﻿  PPMFile.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(37,22): warning C4244: 'initializing': conversion from 'double' to 'uint16_t', possible loss of data
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(97,31): warning C4244: '=': conversion from 'const uint16_t' to 'uint8_t', possible loss of data
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(98,31): warning C4244: '=': conversion from 'const uint16_t' to 'uint8_t', possible loss of data
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(99,31): warning C4244: '=': conversion from 'const uint16_t' to 'uint8_t', possible loss of data
+  NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\Debug\NetpbmEditor.exe

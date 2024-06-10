@@ -21,15 +21,21 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             char fileName[Constants::BASIC_BUFFER_SIZE];
             ss >> fileName;
 
-            LoadCommand* cmd3 = new LoadCommand(fileName);
+            LoadCommand* cmd = new LoadCommand(fileName);
 
-            commands.addCommand(cmd3);
+            commands.addCommand(cmd);
         }
         else if (std::strcmp(command, Constants::SAVE_COMMAND) == 0)
         {
             this->executeCommands();
             this->editor.serializeAllFilesInCurrentSession();
             // TODO: Remove the executed ones
+        }
+        else if(std::strcmp(command, Constants::GRAYSCALE_COMMAND) == 0)
+        {
+            GrayscaleCommand* cmd = new GrayscaleCommand();
+
+            commands.addCommand(cmd);
         }
     }
 }

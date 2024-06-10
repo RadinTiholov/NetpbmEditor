@@ -32,7 +32,14 @@ RasterFile* PPMFile::clone() const
 
 void PPMFile::grayscale()
 {
-
+	for (size_t i = 0; i < this->content.getSize(); i++)
+	{
+		uint16_t grayscale = Constants::GRAYSCALE_RED * this->content[i].red + Constants::GRAYSCALE_GREEN * this->content[i].green + Constants::GRAYSCALE_BLUE * this->content[i].blue;
+		this->content[i].red = grayscale;
+		this->content[i].green = grayscale;
+		this->content[i].blue = grayscale;
+	}
+	std::cout << "Grayscale applied" << std::endl;
 }
 
 void PPMFile::monochrome() 

@@ -173,8 +173,8 @@ PPMFile* FileFactory::createPPMASCIIFile(int height, int width, int magicNumber,
 		values.pushBack(RGBData(red, green, blue));
 	}
 
-	//PPMFile* file = new PPMFile(magicNumber, width, height, Encoding::ASCII, fileName, maxValue, values);
-	PPMFile* file = new PPMFile(6, width, height, Encoding::Binary, fileName, maxValue, values);
+	PPMFile* file = new PPMFile(magicNumber, width, height, Encoding::ASCII, fileName, maxValue, values);
+	//PPMFile* file = new PPMFile(6, width, height, Encoding::Binary, fileName, maxValue, values);
 	return file;
 }
 

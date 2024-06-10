@@ -17,7 +17,10 @@ void Session::addFile(RasterFile* file)
 
 void Session::grayScale() 
 {
-	//Here we apply grayScale for all files
+	for (size_t i = 0; i < this->files.getSize(); i++)
+	{
+		this->files[i]->grayscale();
+	}
 }
 
 void Session::monochrome() 

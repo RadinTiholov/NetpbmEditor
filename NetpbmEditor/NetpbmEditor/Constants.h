@@ -10,5 +10,9 @@ struct Constants
 	static const char* INVALID_MAXVALUE;
 	static const char* LOAD_COMMAND;
 	static const char* SAVE_COMMAND;
+	static const char* GRAYSCALE_COMMAND;
 	static constexpr unsigned BASIC_BUFFER_SIZE = 1024;
+	static constexpr double GRAYSCALE_RED = .299;
+	static constexpr double GRAYSCALE_GREEN = .587;
+	static constexpr double GRAYSCALE_BLUE = .144;
 };
