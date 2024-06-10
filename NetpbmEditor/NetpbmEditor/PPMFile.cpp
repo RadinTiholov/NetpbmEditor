@@ -44,7 +44,14 @@ void PPMFile::grayscale()
 
 void PPMFile::monochrome() 
 {
-
+	for (size_t i = 0; i < this->content.getSize(); i++)
+	{
+		uint16_t newValue = std::round((double)(this->content[i].red + this->content[i].green + this->content[i].blue) / (3 * this->maxValue));
+		this->content[i].red = newValue * this->maxValue;
+		this->content[i].green = newValue * this->maxValue;
+		this->content[i].blue = newValue * this->maxValue;
+	}
+	std::cout << "Monochrome applied" << std::endl;
 };
 
 void PPMFile::negative() 

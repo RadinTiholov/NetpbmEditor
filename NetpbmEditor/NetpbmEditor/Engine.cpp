@@ -37,6 +37,12 @@ void Engine::parseCommandsFrom(std::istream& ifs)
 
             commands.addCommand(cmd);
         }
+        else if (std::strcmp(command, Constants::MONOCHROME_COMMAND) == 0)
+        {
+            MonochromeCommand* cmd = new MonochromeCommand();
+
+            commands.addCommand(cmd);
+        }
     }
 }
 

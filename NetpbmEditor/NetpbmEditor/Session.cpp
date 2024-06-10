@@ -25,5 +25,8 @@ void Session::grayScale()
 
 void Session::monochrome() 
 {
-	//Here we apply monochrome for all files
+	for (size_t i = 0; i < this->files.getSize(); i++)
+	{
+		this->files[i]->monochrome();
+	}
 }
