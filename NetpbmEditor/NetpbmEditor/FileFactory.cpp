@@ -117,15 +117,15 @@ PGMFile* FileFactory::createPGMASCIIFile(int height, int width, int magicNumber,
 {
 	unsigned maxValue;
 	ifs >> maxValue;
-	Vector<uint16_t> values;
+	Vector<uint16_t> values(height * width); // We set the expected capacity and do not resize
 	for (size_t i = 0; i < height * width; i++)
 	{
 		uint16_t value;
 		ifs >> value;
 		values.pushBack(value);
 	}
-	//PGMFile* file = new PGMFile(magicNumber, width, height, Encoding::ASCII, fileName, maxValue, values);
-	PGMFile* file = new PGMFile(5, width, height, Encoding::Binary, fileName, maxValue, values);
+	PGMFile* file = new PGMFile(magicNumber, width, height, Encoding::ASCII, fileName, maxValue, values);
+	//PGMFile* file = new PGMFile(5, width, height, Encoding::Binary, fileName, maxValue, values);
 	return file;
 }
 
@@ -133,8 +133,27 @@ PGMFile* FileFactory::createPGMBinaryFile(int height, int width, int magicNumber
 {
 	unsigned maxValue;
 	ifs >> maxValue;
-	// TODO
-	return nullptr;
+	Vector<uint16_t> values(height * width); // We set the expected capacity and do not resize
+	if (maxValue <= UINT8_MAX)
+	{
+		for (size_t i = 0; i < height * width; i++)
+		{
+			uint8_t value;
+			ifs.read((char*)(&value), sizeof(uint8_t));
+			values.pushBack(value);
+		}
+	}
+	else
+	{
+		for (size_t i = 0; i < height * width; i++)
+		{
+			uint16_t value;
+			ifs.read((char*)(&value), sizeof(uint16_t));
+			values.pushBack(value);
+		}
+	}
+	PGMFile* file = new PGMFile(magicNumber, width, height, Encoding::Binary, fileName, maxValue, values);
+	return file;
 }
 
 RasterFile* FileFactory::createFile(const char* fileName)
