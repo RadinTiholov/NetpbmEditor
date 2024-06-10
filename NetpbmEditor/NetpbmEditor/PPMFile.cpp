@@ -80,5 +80,28 @@ void PPMFile::serialize() const
 
 void PPMFile::serializeContentToBinary(std::ofstream& ofs) const
 {
+	size_t size = this->content.getSize();
 
+	if (this->maxValue <= UINT8_MAX)
+	{
+		for (size_t i = 0; i < size; i++)
+		{
+			uint8_t pixel[3];
+			pixel[0] = this->content[i].red;
+			pixel[1] = this->content[i].green;
+			pixel[2] = this->content[i].blue;
+			ofs.write(reinterpret_cast<const char*>(pixel), sizeof(uint8_t) * 3);
+		}
+	}
+	else
+	{
+		for (size_t i = 0; i < size; i++)
+		{
+			uint16_t pixel[3];
+			pixel[0] = this->content[i].red;
+			pixel[1] = this->content[i].green;
+			pixel[2] = this->content[i].blue;
+			ofs.write(reinterpret_cast<const char*>(pixel), sizeof(uint16_t) * 3);
+		}
+	}
 }

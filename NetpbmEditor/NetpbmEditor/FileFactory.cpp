@@ -173,7 +173,8 @@ PPMFile* FileFactory::createPPMASCIIFile(int height, int width, int magicNumber,
 		values.pushBack(RGBData(red, green, blue));
 	}
 
-	PPMFile* file = new PPMFile(magicNumber, width, height, Encoding::ASCII, fileName, maxValue, values);
+	//PPMFile* file = new PPMFile(magicNumber, width, height, Encoding::ASCII, fileName, maxValue, values);
+	PPMFile* file = new PPMFile(6, width, height, Encoding::Binary, fileName, maxValue, values);
 	return file;
 }
 
@@ -181,8 +182,28 @@ PPMFile* FileFactory::createPPMBinaryFile(int height, int width, int magicNumber
 {
 	unsigned maxValue;
 	ifs >> maxValue;
+	Vector<RGBData> values(height * width);
 
-	return nullptr;
+	if (maxValue <= UINT8_MAX)
+	{
+		for (size_t i = 0; i < height * width; i++)
+		{
+			uint8_t rgbValues[3];
+			ifs.read((char*)(rgbValues), sizeof(uint8_t) * 3);
+			values.pushBack(RGBData(rgbValues[0], rgbValues[1], rgbValues[2]));
+		}
+	}
+	else
+	{
+		for (size_t i = 0; i < height * width; i++)
+		{
+			uint16_t rgbValues[3];
+			ifs.read((char*)(rgbValues), sizeof(uint16_t) * 3);
+			values.pushBack(RGBData(rgbValues[0], rgbValues[1], rgbValues[2]));
+		}
+	}
+	PPMFile* file = new PPMFile(magicNumber, width, height, Encoding::Binary, fileName, maxValue, values);
+	return file;
 }
 
 RasterFile* FileFactory::createFile(const char* fileName)
