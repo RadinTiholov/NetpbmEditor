@@ -117,9 +117,6 @@ void PBMFile::monochrome()
 
 void PBMFile::rotate(Direction direction)
 {
-	unsigned temp = this->height;
-	this->height = this->width;
-	this->width = temp;
 	if (direction == Direction::Left)
 	{
 		this->rotateLeft();
@@ -128,6 +125,9 @@ void PBMFile::rotate(Direction direction)
 	{
 		this->rotateRight();
 	}
+	unsigned temp = this->height;
+	this->height = this->width;
+	this->width = temp;
 }
 
 void PBMFile::rotateRight()
