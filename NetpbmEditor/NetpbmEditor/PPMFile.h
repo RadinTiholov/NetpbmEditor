@@ -11,7 +11,6 @@ public:
 	void grayscale() override;
 	void monochrome() override;
 	void negative() override;
-	void rotate(Direction direction) override;
 
 	void serialize() const override;
 private:
@@ -19,6 +18,8 @@ private:
 	Vector<RGBData> content;
 	void setMaxValue(unsigned maxValue);
 	void writeMaxValue(std::ofstream& ofs) const;
-
 	void serializeContentToBinary(std::ofstream& ofs) const;
+
+	void rotateRight() override;
+	void rotateLeft() override;
 };

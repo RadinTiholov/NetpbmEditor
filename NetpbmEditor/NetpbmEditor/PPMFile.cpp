@@ -65,9 +65,34 @@ void PPMFile::negative()
 	std::cout << "Negative applied" << std::endl;
 };
 
-void PPMFile::rotate(Direction direction)
+void PPMFile::rotateRight()
 {
+	Vector<RGBData> newContent(this->height * this->width);
 
+	for (int col = 0; col < width; col++)
+	{
+		for (int row = height - 1; row >= 0; row--)
+		{
+			newContent.pushBack(this->content[row * width + col]);
+		}
+	}
+
+	this->content = newContent;
+}
+
+void PPMFile::rotateLeft()
+{
+	Vector<RGBData> newContent(this->height * this->width);
+
+	for (int col = width - 1; col >= 0; col--)
+	{
+		for (int row = 0; row < height; row++)
+		{
+			newContent.pushBack(this->content[row * width + col]);
+		}
+	}
+
+	this->content = newContent;
 }
 
 void PPMFile::serialize() const
