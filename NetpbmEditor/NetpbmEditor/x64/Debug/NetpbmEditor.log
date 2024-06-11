@@ -14,13 +14,19 @@ D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\
   MonochromeCommand.cpp
   NegativeCommand.cpp
   NetpbmEditor.cpp
-  PBMFile.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(138,24): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(160,25): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(177,30): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(179,25): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(183,22): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  PGMFile.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PGMFile.cpp(37,37): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=uint16_t
+          ]
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PGMFile.cpp(70,24): warning C4018: '<': signed/unsigned mismatch
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PGMFile.cpp(87,25): warning C4018: '<': signed/unsigned mismatch
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PGMFile.cpp(132,18): warning C4244: 'initializing': conversion from 'const T' to 'uint8_t', possible loss of data
+          with
+          [
+              T=uint16_t
+          ]
   RotateCommand.cpp
   Generating Code...
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(258): warning C4715: 'FileFactory::createFile': not all control paths return a value
-  NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\x64\Debug\NetpbmEditor.exe
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\LoadCommand.cpp : fatal  error C1090: PDB API call failed, error code '3': D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\x64\Debug\vc143.pdb

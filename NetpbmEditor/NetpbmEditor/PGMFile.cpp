@@ -50,7 +50,47 @@ void PGMFile::negative()
 
 void PGMFile::rotate(Direction direction)
 {
+	if (direction == Direction::Left)
+	{
+		this->rotateLeft();
+	}
+	else if (direction == Direction::Right)
+	{
+		this->rotateRight();
+	}
+	unsigned temp = this->height;
+	this->height = this->width;
+	this->width = temp;
+}
 
+void PGMFile::rotateRight() 
+{
+	Vector<uint16_t> newContent(this->height * this->width);
+
+	for (int col = 0; col < width; col++)
+	{
+		for (int row = height - 1; row >= 0; row--)
+		{
+			newContent.pushBack(this->content[row * width + col]);
+		}
+	}
+
+	this->content = newContent;
+}
+
+void PGMFile::rotateLeft()
+{
+	Vector<uint16_t> newContent(this->height * this->width);
+
+	for (int col = width - 1; col >= 0; col--)
+	{
+		for (int row = 0; row < height; row++)
+		{
+			newContent.pushBack(this->content[row * width + col]);
+		}
+	}
+
+	this->content = newContent;
 }
 
 void PGMFile::serialize() const 

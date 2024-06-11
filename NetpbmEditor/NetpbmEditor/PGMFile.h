@@ -18,6 +18,8 @@ private:
 	Vector<uint16_t> content;
 	void setMaxValue(unsigned maxValue);
 	void writeMaxValue(std::ofstream& ofs) const;
-
 	void serializeContentToBinary(std::ofstream& ofs) const;
+
+	void rotateRight();
+	void rotateLeft();
 };
