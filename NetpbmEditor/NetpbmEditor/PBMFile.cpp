@@ -113,14 +113,24 @@ void PBMFile::grayscale()
 void PBMFile::monochrome()
 {
 
-};
-
-void PBMFile::negative()
-{
-
-};
+}
 
 void PBMFile::rotate()
 {
 
+}
+
+void PBMFile::negative()
+{
+	for (size_t i = 0; i < this->height * this->width; i++)
+	{
+		if (this->content.contains(i))
+		{
+			this->content.remove(i);
+		}
+		else
+		{
+			this->content.add(i);
+		}
+	}
 }

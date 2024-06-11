@@ -93,6 +93,9 @@
     <ClCompile Include="RGBData.cpp">
       <Filter>Source Files\FileModels</Filter>
     </ClCompile>
+    <ClCompile Include="NegativeCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Editor.h">
@@ -151,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="RGBData.h">
       <Filter>Header Files\FileModels</Filter>
+    </ClInclude>
+    <ClInclude Include="NegativeCommand.h">
+      <Filter>Header Files\Commands</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

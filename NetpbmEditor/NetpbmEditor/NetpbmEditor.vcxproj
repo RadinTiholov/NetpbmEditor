@@ -137,6 +137,7 @@
     <ClCompile Include="LoadCommand.cpp" />
     <ClCompile Include="MonochromeCommand.cpp" />
     <ClCompile Include="MyString.cpp" />
+    <ClCompile Include="NegativeCommand.cpp" />
     <ClCompile Include="NetpbmEditor.cpp" />
     <ClCompile Include="PBMFile.cpp" />
     <ClCompile Include="PGMFile.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="LoadCommand.h" />
     <ClInclude Include="MonochromeCommand.h" />
     <ClInclude Include="MyString.h" />
+    <ClInclude Include="NegativeCommand.h" />
     <ClInclude Include="PBMFile.h" />
     <ClInclude Include="PGMFile.h" />
     <ClInclude Include="PPMFile.h" />

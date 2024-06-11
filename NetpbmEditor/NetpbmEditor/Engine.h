@@ -3,6 +3,7 @@
 #include "CommandContainer.h"
 #include "GrayscaleCommand.h"
 #include "MonochromeCommand.h"
+#include "NegativeCommand.h"
 #include "LoadCommand.h"
 #include "Constants.h"
 #include <sstream>

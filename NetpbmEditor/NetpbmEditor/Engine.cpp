@@ -43,6 +43,12 @@ void Engine::parseCommandsFrom(std::istream& ifs)
 
             commands.addCommand(cmd);
         }
+        else if (std::strcmp(command, Constants::NEGATIVE_COMMAND) == 0)
+        {
+            NegativeCommand* cmd = new NegativeCommand();
+
+            commands.addCommand(cmd);
+        }
     }
 }
 

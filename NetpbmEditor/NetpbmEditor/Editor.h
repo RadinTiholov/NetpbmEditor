@@ -22,5 +22,6 @@ public:
 	//TODO : undo just remove the last command
 	friend class GrayscaleCommand;
 	friend class MonochromeCommand;
+	friend class NegativeCommand;
 };
 

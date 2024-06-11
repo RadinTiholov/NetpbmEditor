@@ -30,3 +30,11 @@ void Session::monochrome()
 		this->files[i]->monochrome();
 	}
 }
+
+void Session::negative() 
+{
+	for (size_t i = 0; i < this->files.getSize(); i++)
+	{
+		this->files[i]->negative();
+	}
+}

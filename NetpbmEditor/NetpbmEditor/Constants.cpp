@@ -11,3 +11,4 @@ const char* Constants::LOAD_COMMAND = "load";
 const char* Constants::SAVE_COMMAND = "save";
 const char* Constants::GRAYSCALE_COMMAND = "grayscale";
 const char* Constants::MONOCHROME_COMMAND = "monochrome";
+const char* Constants::NEGATIVE_COMMAND = "negative";
