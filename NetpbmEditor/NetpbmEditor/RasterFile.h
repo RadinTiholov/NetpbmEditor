@@ -2,6 +2,7 @@
 #include "MyString.h"
 #include "Constants.h"
 #include <fstream>
+#include "Direction.h"
 
 enum class Encoding 
 {
@@ -25,7 +26,7 @@ public:
 	virtual void grayscale() = 0;
 	virtual void monochrome() = 0;
 	virtual void negative() = 0;
-	virtual void rotate() = 0; //TODO: add direction
+	virtual void rotate(Direction direction) = 0;
 
 	void writeMagicNumber(std::ofstream& is) const;
 	void writeWidthAndHeight(std::ofstream& is) const;

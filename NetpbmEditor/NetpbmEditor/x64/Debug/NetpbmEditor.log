@@ -1,7 +1,26 @@
-﻿  PPMFile.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(37,22): warning C4244: 'initializing': conversion from 'double' to 'uint16_t', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(49,21): warning C4244: 'initializing': conversion from 'double' to 'uint16_t', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(110,31): warning C4244: '=': conversion from 'const uint16_t' to 'uint8_t', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(111,31): warning C4244: '=': conversion from 'const uint16_t' to 'uint8_t', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(112,31): warning C4244: '=': conversion from 'const uint16_t' to 'uint8_t', possible loss of data
+﻿  CommandContainer.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(71,13): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+  Editor.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Editor.cpp(7,61): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Editor.cpp(24,20): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+  Engine.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Engine.cpp(81,24): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  FileFactory.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(102,30): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(104,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(108,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  GrayscaleCommand.cpp
+  LoadCommand.cpp
+  MonochromeCommand.cpp
+  NegativeCommand.cpp
+  NetpbmEditor.cpp
+  PBMFile.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(138,24): warning C4018: '<': signed/unsigned mismatch
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(160,25): warning C4018: '<': signed/unsigned mismatch
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(177,30): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(179,25): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(183,22): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  RotateCommand.cpp
+  Generating Code...
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(258): warning C4715: 'FileFactory::createFile': not all control paths return a value
   NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\x64\Debug\NetpbmEditor.exe

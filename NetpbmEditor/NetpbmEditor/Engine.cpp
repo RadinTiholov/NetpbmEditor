@@ -49,6 +49,27 @@ void Engine::parseCommandsFrom(std::istream& ifs)
 
             commands.addCommand(cmd);
         }
+        else if (std::strcmp(command, Constants::ROTATE_COMMAND) == 0)
+        {
+            char direction[Constants::BASIC_BUFFER_SIZE];
+            ss >> direction;
+
+            if (std::strcmp(direction, Constants::LEFT_COMMAND) == 0)
+            {
+                RotateCommand* cmd = new RotateCommand(Direction::Left);
+                commands.addCommand(cmd);
+            }
+            else if (std::strcmp(direction, Constants::RIGHT_COMMAND) == 0)
+            {
+                RotateCommand* cmd = new RotateCommand(Direction::Right);
+                commands.addCommand(cmd);
+            }
+            else 
+            {
+                //TODO
+                throw std::exception();
+            }
+        }
     }
 }
 

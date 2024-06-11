@@ -38,3 +38,11 @@ void Session::negative()
 		this->files[i]->negative();
 	}
 }
+
+void Session::rotate(Direction direction)
+{
+	for (size_t i = 0; i < this->files.getSize(); i++)
+	{
+		this->files[i]->rotate(direction);
+	}
+}

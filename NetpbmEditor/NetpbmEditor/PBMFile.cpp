@@ -115,9 +115,59 @@ void PBMFile::monochrome()
 
 }
 
-void PBMFile::rotate()
+void PBMFile::rotate(Direction direction)
 {
+	unsigned temp = this->height;
+	this->height = this->width;
+	this->width = temp;
+	if (direction == Direction::Left)
+	{
+		this->rotateLeft();
+	}
+	else if (direction == Direction::Right) 
+	{
+		this->rotateRight();
+	}
+}
 
+void PBMFile::rotateRight()
+{
+	DynamicSet newContent(this->height * this->width);
+
+	int index = 0;
+	for (int col = 0; col < width; col++)
+	{
+		for (int row = height - 1; row >= 0; row--)
+		{
+			if (this->content.contains(row * width + col))
+			{
+				newContent.add(index);
+			}
+			index++;
+		}
+	}
+
+	this->content = newContent;
+}
+
+void PBMFile::rotateLeft()
+{
+	DynamicSet newContent(this->height * this->width);
+
+	int index = 0;
+	for (int col = width - 1; col >= 0; col--)
+	{
+		for (int row = 0; row < height; row++)
+		{
+			if (this->content.contains(row * width + col))
+			{
+				newContent.add(index);
+			}
+			index++;
+		}
+	}
+
+	this->content = newContent;
 }
 
 void PBMFile::negative()

@@ -23,5 +23,6 @@ public:
 	friend class GrayscaleCommand;
 	friend class MonochromeCommand;
 	friend class NegativeCommand;
+	friend class RotateCommand;
 };
 

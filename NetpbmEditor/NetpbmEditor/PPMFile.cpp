@@ -65,7 +65,7 @@ void PPMFile::negative()
 	std::cout << "Negative applied" << std::endl;
 };
 
-void PPMFile::rotate() 
+void PPMFile::rotate(Direction direction)
 {
 
 }

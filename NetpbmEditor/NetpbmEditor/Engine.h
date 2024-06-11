@@ -5,7 +5,9 @@
 #include "MonochromeCommand.h"
 #include "NegativeCommand.h"
 #include "LoadCommand.h"
+#include "RotateCommand.h"
 #include "Constants.h"
+#include "Direction.h"
 #include <sstream>
 
 class Engine

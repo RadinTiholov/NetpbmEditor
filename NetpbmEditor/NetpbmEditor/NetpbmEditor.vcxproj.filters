@@ -96,6 +96,9 @@
     <ClCompile Include="NegativeCommand.cpp">
       <Filter>Source Files\Commands</Filter>
     </ClCompile>
+    <ClCompile Include="RotateCommand.cpp">
+      <Filter>Source Files\Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Editor.h">
@@ -156,6 +159,12 @@
       <Filter>Header Files\FileModels</Filter>
     </ClInclude>
     <ClInclude Include="NegativeCommand.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Direction.h">
+      <Filter>Source Files\Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="RotateCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
   </ItemGroup>

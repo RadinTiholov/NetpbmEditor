@@ -11,7 +11,7 @@ public:
 	void grayscale() override;
 	void monochrome() override;
 	void negative() override;
-	void rotate() override;
+	void rotate(Direction direction) override;
 
 	void serialize() const override;
 private:

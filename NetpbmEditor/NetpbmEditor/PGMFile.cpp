@@ -48,7 +48,7 @@ void PGMFile::negative()
 	std::cout << "Negative applied" << std::endl;
 };
 
-void PGMFile::rotate()
+void PGMFile::rotate(Direction direction)
 {
 
 }

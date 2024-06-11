@@ -145,12 +145,14 @@
     <ClCompile Include="RasterFile.cpp" />
     <ClCompile Include="RasterFileContainer.cpp" />
     <ClCompile Include="RGBData.cpp" />
+    <ClCompile Include="RotateCommand.cpp" />
     <ClCompile Include="Session.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandContainer.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="Direction.h" />
     <ClInclude Include="DynamicSet.h" />
     <ClInclude Include="Editor.h" />
     <ClInclude Include="Engine.h" />
@@ -166,6 +168,7 @@
     <ClInclude Include="RasterFile.h" />
     <ClInclude Include="RasterFileContainer.h" />
     <ClInclude Include="RGBData.h" />
+    <ClInclude Include="RotateCommand.h" />
     <ClInclude Include="Session.h" />
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>

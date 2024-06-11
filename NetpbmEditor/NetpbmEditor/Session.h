@@ -1,6 +1,7 @@
 #pragma once
 #include "RasterFile.h"
 #include "RasterFileContainer.h"
+#include "Direction.h"
 
 class Session
 {
@@ -13,7 +14,7 @@ public:
 	void grayScale();
 	void monochrome();
 	void negative();
-	void rotate(); // TODO: direction
+	void rotate(Direction direction);
 
 	friend class Editor;
 private:
