@@ -2,5 +2,17 @@
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(102,30): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(104,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(108,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  PGMFile.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PGMFile.cpp(37,37): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=uint16_t
+          ]
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PGMFile.cpp(88,18): warning C4244: 'initializing': conversion from 'const T' to 'uint8_t', possible loss of data
+          with
+          [
+              T=uint16_t
+          ]
+  Generating Code...
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(258): warning C4715: 'FileFactory::createFile': not all control paths return a value
   NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\x64\Debug\NetpbmEditor.exe

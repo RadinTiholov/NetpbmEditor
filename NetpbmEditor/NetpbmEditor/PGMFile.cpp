@@ -32,7 +32,11 @@ void PGMFile::grayscale()
 
 void PGMFile::monochrome()
 {
-
+	for (size_t i = 0; i < this->content.getSize(); i++)
+	{
+		this->content[i] = this->maxValue * std::round((double)this->content[i] / this->maxValue);
+	}
+	std::cout << "Monochrome applied" << std::endl;
 };
 
 void PGMFile::negative()
