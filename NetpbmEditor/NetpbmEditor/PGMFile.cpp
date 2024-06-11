@@ -41,7 +41,11 @@ void PGMFile::monochrome()
 
 void PGMFile::negative()
 {
-
+	for (size_t i = 0; i < this->content.getSize(); i++)
+	{
+		this->content[i] = this->maxValue - this->content[i];
+	}
+	std::cout << "Negative applied" << std::endl;
 };
 
 void PGMFile::rotate()

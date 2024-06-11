@@ -56,7 +56,13 @@ void PPMFile::monochrome()
 
 void PPMFile::negative() 
 {
-
+	for (size_t i = 0; i < this->content.getSize(); i++)
+	{
+		this->content[i].red = this->maxValue - this->content[i].red;
+		this->content[i].green = this->maxValue - this->content[i].green;
+		this->content[i].blue = this->maxValue - this->content[i].blue;
+	}
+	std::cout << "Negative applied" << std::endl;
 };
 
 void PPMFile::rotate() 
