@@ -10,7 +10,6 @@ public:
 	void grayscale() override;
 	void monochrome() override;
 	void negative() override;
-	void rotate(Direction direction) override;
 
 	void serialize() const override;
 private:
@@ -20,6 +19,6 @@ private:
 	void writeMaxValue(std::ofstream& ofs) const;
 	void serializeContentToBinary(std::ofstream& ofs) const;
 
-	void rotateRight();
-	void rotateLeft();
+	void rotateRight() override;
+	void rotateLeft() override;
 };

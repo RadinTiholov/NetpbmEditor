@@ -9,7 +9,6 @@ public:
 	void grayscale() override;
 	void monochrome() override;
 	void negative() override;
-	void rotate(Direction direction) override;
 
 	void serialize() const override;
 	RasterFile* clone() const override;
@@ -19,6 +18,6 @@ private:
 	void adjustByteWithExcessBits(int& startBit, uint8_t*& bytes, int excessBits, int currentByteIndex) const;
 	void adjustByteWithoutExcessBits(int& startBit, uint8_t*& bytes, int currentByteIndex) const;
 
-	void rotateRight();
-	void rotateLeft();
+	void rotateRight() override;
+	void rotateLeft() override;
 };

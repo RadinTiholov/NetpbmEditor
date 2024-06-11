@@ -115,21 +115,6 @@ void PBMFile::monochrome()
 
 }
 
-void PBMFile::rotate(Direction direction)
-{
-	if (direction == Direction::Left)
-	{
-		this->rotateLeft();
-	}
-	else if (direction == Direction::Right) 
-	{
-		this->rotateRight();
-	}
-	unsigned temp = this->height;
-	this->height = this->width;
-	this->width = temp;
-}
-
 void PBMFile::rotateRight()
 {
 	DynamicSet newContent(this->height * this->width);

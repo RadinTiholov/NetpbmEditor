@@ -48,21 +48,6 @@ void PGMFile::negative()
 	std::cout << "Negative applied" << std::endl;
 };
 
-void PGMFile::rotate(Direction direction)
-{
-	if (direction == Direction::Left)
-	{
-		this->rotateLeft();
-	}
-	else if (direction == Direction::Right)
-	{
-		this->rotateRight();
-	}
-	unsigned temp = this->height;
-	this->height = this->width;
-	this->width = temp;
-}
-
 void PGMFile::rotateRight() 
 {
 	Vector<uint16_t> newContent(this->height * this->width);
