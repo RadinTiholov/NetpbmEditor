@@ -32,14 +32,23 @@ void Editor::load(const char* fileName)
 	// Add session
 	sessions.pushBack(session);
 }
+
+void Editor::addToCurrentSession(const char* fileName) 
+{
+	RasterFile* createdImage = FileFactory::createFile(fileName);
+	this->sessions[this->indexOfCurrentSession].addFile(createdImage);
+}
+
 void Editor::close(unsigned sessionId) 
 {
 
 }
+
 void Editor::switchSession(unsigned sessionID) 
 {
 
 }
+
 void Editor::help() const 
 {
 

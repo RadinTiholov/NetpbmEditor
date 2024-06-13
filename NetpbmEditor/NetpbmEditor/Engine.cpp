@@ -70,6 +70,15 @@ void Engine::parseCommandsFrom(std::istream& ifs)
                 throw std::exception();
             }
         }
+        else if (std::strcmp(command, Constants::ADD_COMMAND) == 0) 
+        {
+            char fileName[Constants::BASIC_BUFFER_SIZE];
+            ss >> fileName;
+
+            AddCommand* cmd = new AddCommand(fileName);
+
+            commands.addCommand(cmd);
+        }
     }
 }
 

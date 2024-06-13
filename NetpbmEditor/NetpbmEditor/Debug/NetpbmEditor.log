@@ -1,7 +1,12 @@
-﻿  CommandContainer.cpp
+﻿  AddCommand.cpp
+  CommandContainer.cpp
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(76,20): warning C4018: '<': signed/unsigned mismatch
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(85,20): warning C4018: '<': signed/unsigned mismatch
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(106,20): warning C4018: '<': signed/unsigned mismatch
+  Constants.cpp
+  DynamicSet.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\DynamicSet.cpp(94,20): warning C4018: '<=': signed/unsigned mismatch
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\DynamicSet.cpp(110,20): warning C4018: '<=': signed/unsigned mismatch
   Editor.cpp
   Engine.cpp
   FileFactory.cpp

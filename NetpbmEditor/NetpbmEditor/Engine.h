@@ -6,6 +6,7 @@
 #include "NegativeCommand.h"
 #include "LoadCommand.h"
 #include "RotateCommand.h"
+#include "AddCommand.h"
 #include "Constants.h"
 #include "Direction.h"
 #include <sstream>

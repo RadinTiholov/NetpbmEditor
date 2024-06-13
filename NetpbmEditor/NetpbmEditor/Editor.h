@@ -15,6 +15,7 @@ public:
 	void serializeAllFilesInCurrentSession() const;
 	void saveAs(const char* newFileName) const;
 	void load(const char* fileName);
+	void addToCurrentSession(const char* fileName);
 	void close(unsigned sessionId);
 	void switchSession(unsigned sessionID);
 	void help() const;
@@ -24,5 +25,6 @@ public:
 	friend class MonochromeCommand;
 	friend class NegativeCommand;
 	friend class RotateCommand;
+	friend class AddCommand;
 };
 

@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddCommand.cpp" />
     <ClCompile Include="CommandContainer.cpp" />
     <ClCompile Include="Constants.cpp" />
     <ClCompile Include="DynamicSet.cpp" />
@@ -149,6 +150,7 @@
     <ClCompile Include="Session.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddCommand.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="CommandContainer.h" />
     <ClInclude Include="Constants.h" />

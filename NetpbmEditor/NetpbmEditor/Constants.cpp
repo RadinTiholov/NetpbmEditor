@@ -15,3 +15,4 @@ const char* Constants::NEGATIVE_COMMAND = "negative";
 const char* Constants::ROTATE_COMMAND = "rotate";
 const char* Constants::LEFT_COMMAND = "left";
 const char* Constants::RIGHT_COMMAND = "right";
+const char* Constants:: ADD_COMMAND = "add";
