@@ -56,6 +56,16 @@ void CommandContainer::addCommand(const Command& shape)
 	addCommand(cloned);
 }
 
+void CommandContainer::removeLast() 
+{
+	if (this->size == 0)
+		return;
+
+	delete data[this->size - 1];
+	data[this->size - 1] = nullptr;
+	this->size--;
+}
+
 const Command* CommandContainer::operator[](unsigned index) const 
 {
 	return this->data[index];
@@ -73,7 +83,7 @@ unsigned CommandContainer::getSize() const
 
 void CommandContainer::free() 
 {
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < this->size; i++)
 		delete data[i];
 	delete[] data;
 }

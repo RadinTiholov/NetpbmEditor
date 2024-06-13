@@ -29,7 +29,7 @@ void Engine::parseCommandsFrom(std::istream& ifs)
         {
             this->executeCommands();
             this->editor.serializeAllFilesInCurrentSession();
-            // TODO: Remove the executed ones
+            this->removeCommands();
         }
         else if(std::strcmp(command, Constants::GRAYSCALE_COMMAND) == 0)
         {
@@ -82,12 +82,20 @@ void Engine::parseCommandsFrom(std::istream& ifs)
     }
 }
 
+// Executes the commands consequentialy
 void Engine::executeCommands()
 {
-    // Here we execute the commands consequentialy
     for (size_t i = 0; i < this->commands.getSize(); i++)
     {
         this->commands[i]->execute(this->editor);
     }
 }
 
+// Removes all commands
+void Engine::removeCommands() 
+{
+    for (size_t i = 0; i < this->commands.getSize(); i++)
+    {
+        this->commands.removeLast();
+    }
+}

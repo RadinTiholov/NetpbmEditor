@@ -12,8 +12,9 @@ public:
 	~CommandContainer();
 
 	void addCommand(Command* shape); //will take the ownership of the object  
-
 	void addCommand(const Command& shape);
+
+	void removeLast();
 
 	const Command* operator[](unsigned) const;
 	Command* operator[](unsigned);

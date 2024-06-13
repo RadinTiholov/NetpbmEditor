@@ -21,5 +21,6 @@ private:
 
 	void parseCommandsFrom(std::istream& ifs);
 	void executeCommands();
+	void removeCommands();
 };
 
