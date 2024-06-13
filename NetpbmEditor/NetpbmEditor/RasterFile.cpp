@@ -10,6 +10,21 @@ void RasterFile::writeWidthAndHeight(std::ofstream& ofs) const
 	ofs << this->width << ' ' << this->height << ' ';
 }
 
+const char* RasterFile::getFileName() const 
+{
+	return this->fileName.c_str();
+}
+
+unsigned RasterFile::getWidth() const 
+{
+	return this->width;
+}
+
+unsigned RasterFile::getHeight() const 
+{
+	return this->height;
+}
+
 void RasterFile::rotate(Direction direction) 
 {
 	if (direction == Direction::Left)
@@ -24,6 +39,19 @@ void RasterFile::rotate(Direction direction)
 	this->height = this->width;
 	this->width = temp;
 	std::cout << "Rotated successfully" << std::endl;
+}
+
+RasterFile* RasterFile::collageWith(const Direction& direction, const RasterFile* other, const char* fileName) const
+{
+	if (direction == Direction::Horizontal)
+	{
+		return this->horizontalCollage(other, fileName);
+	}
+	else if (direction == Direction::Vertical)
+	{
+
+		return this->verticalCollage(other, fileName);
+	}
 }
 
 void RasterFile::setMagicNumber(unsigned newMagicNumber)

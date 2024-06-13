@@ -7,6 +7,7 @@
 #include "LoadCommand.h"
 #include "RotateCommand.h"
 #include "AddCommand.h"
+#include "CollageCommand.h"
 #include "Constants.h"
 #include "Direction.h"
 #include <sstream>

@@ -1,7 +1,16 @@
 #include "RotateCommand.h"
 
-RotateCommand::RotateCommand(Direction direction) 
+RotateCommand::RotateCommand(const Direction& direction) 
 {
+	setDirection(direction);
+}
+
+void RotateCommand::setDirection(const Direction& direction) 
+{
+	if (direction != Direction::Left && direction != Direction::Right)
+	{
+		throw std::invalid_argument("Invalid direction");
+	}
 	this->direction = direction;
 }
 

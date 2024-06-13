@@ -16,6 +16,8 @@ public:
 	void saveAs(const char* newFileName) const;
 	void load(const char* fileName);
 	void addToCurrentSession(const char* fileName);
+	int findFileIndexInCurrentSessionByName(const char* fileName) const;
+	void collage(const Direction& direction, int firstIndex, int secondIndex, const char* outFileName);
 	void close(unsigned sessionId);
 	void switchSession(unsigned sessionID);
 	void help() const;
@@ -26,5 +28,6 @@ public:
 	friend class NegativeCommand;
 	friend class RotateCommand;
 	friend class AddCommand;
+	friend class CollageCommand;
 };
 

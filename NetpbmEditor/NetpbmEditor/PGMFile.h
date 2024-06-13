@@ -21,4 +21,7 @@ private:
 
 	void rotateRight() override;
 	void rotateLeft() override;
+	
+	RasterFile* horizontalCollage(const RasterFile* other, const char* fileName) const override;
+	RasterFile* verticalCollage(const RasterFile* other, const char* fileName) const override;
 };

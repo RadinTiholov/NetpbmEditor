@@ -39,6 +39,25 @@ void Editor::addToCurrentSession(const char* fileName)
 	this->sessions[this->indexOfCurrentSession].addFile(createdImage);
 }
 
+int Editor::findFileIndexInCurrentSessionByName(const char* fileName) const 
+{
+	for (size_t i = 0; i < sessions[indexOfCurrentSession].files.getSize(); i++)
+	{
+		if (std::strcmp(fileName, sessions[indexOfCurrentSession].files[i]->getFileName()) == 0)
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+void Editor::collage(const Direction& direction, int firstIndex, int secondIndex, const char* outFileName) 
+{
+	RasterFile* file = this->sessions[this->indexOfCurrentSession].collage(direction, firstIndex, secondIndex, outFileName);
+
+	this->sessions[this->indexOfCurrentSession].addFile(file);
+}
+
 void Editor::close(unsigned sessionId) 
 {
 

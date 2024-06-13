@@ -14,9 +14,11 @@ public:
 	void grayScale();
 	void monochrome();
 	void negative();
-	void rotate(Direction direction);
+	void rotate(const Direction& direction);
+	RasterFile* collage(const Direction& direction, int indexOfFirst, int indexOfSecond, const char* outFileName);
 
 	friend class Editor;
+	friend class CollageCommand;
 private:
 	unsigned _id = 0;
 	RasterFileContainer files;

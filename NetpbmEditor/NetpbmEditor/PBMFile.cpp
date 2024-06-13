@@ -100,6 +100,18 @@ void PBMFile::adjustByteWithExcessBits(int& startBit, uint8_t*& bytes, int exces
 	startBit += 8 - excessBits;
 }
 
+RasterFile* PBMFile::horizontalCollage(const RasterFile* other, const char* fileName) const
+{
+	//TODO
+	return nullptr;
+}
+
+RasterFile* PBMFile::verticalCollage(const RasterFile* other, const char* fileName) const
+{
+	//TODO
+	return nullptr;
+}
+
 RasterFile* PBMFile::clone() const
 {
 	return new PBMFile(*this);

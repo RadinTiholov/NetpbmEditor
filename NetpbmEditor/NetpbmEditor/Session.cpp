@@ -15,6 +15,11 @@ void Session::addFile(RasterFile* file)
 	this->files.addFile(file);
 }
 
+RasterFile* Session::collage(const Direction& direction, int indexOfFirst, int indexOfSecond, const char* outFileName) 
+{
+	return this->files[indexOfFirst]->collageWith(direction, this->files[indexOfSecond], outFileName);
+}
+
 void Session::grayScale() 
 {
 	for (size_t i = 0; i < this->files.getSize(); i++)
@@ -39,7 +44,7 @@ void Session::negative()
 	}
 }
 
-void Session::rotate(Direction direction)
+void Session::rotate(const Direction& direction)
 {
 	for (size_t i = 0; i < this->files.getSize(); i++)
 	{

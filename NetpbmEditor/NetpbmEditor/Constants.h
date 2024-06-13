@@ -17,6 +17,9 @@ struct Constants
 	static const char* LEFT_COMMAND;
 	static const char* RIGHT_COMMAND;
 	static const char* ADD_COMMAND;
+	static const char* COLLAGE_COMMAND;
+	static const char* HORIZONTAL_COMMAND;
+	static const char* VERTICAL_COMMAND;
 	static constexpr unsigned BASIC_BUFFER_SIZE = 1024;
 	static constexpr double GRAYSCALE_RED = .299;
 	static constexpr double GRAYSCALE_GREEN = .587;

@@ -5,11 +5,12 @@
 class RotateCommand: public Command
 {
 public:
-	RotateCommand(Direction direction);
+	RotateCommand(const Direction& direction);
 	void execute(Editor& editor) override;
 
 	Command* clone() const override;
 private:
 	Direction direction;
+	void setDirection(const Direction& direction);
 };
 

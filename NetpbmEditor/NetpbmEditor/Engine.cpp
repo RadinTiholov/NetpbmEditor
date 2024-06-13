@@ -79,6 +79,33 @@ void Engine::parseCommandsFrom(std::istream& ifs)
 
             commands.addCommand(cmd);
         }
+        else if (std::strcmp(command, Constants::COLLAGE_COMMAND) == 0)
+        {
+            char direction[Constants::BASIC_BUFFER_SIZE];
+            ss >> direction;
+
+            char firstFile[Constants::BASIC_BUFFER_SIZE];
+            ss >> firstFile;
+
+            char secondFile[Constants::BASIC_BUFFER_SIZE];
+            ss >> secondFile;
+
+            char outImage[Constants::BASIC_BUFFER_SIZE];
+            ss >> outImage;
+
+            if (std::strcmp(direction, Constants::HORIZONTAL_COMMAND) == 0)
+            {
+                CollageCommand* cmd = new CollageCommand(Direction::Horizontal, firstFile, secondFile, outImage);
+
+                commands.addCommand(cmd);
+            }
+            else if (std::strcmp(direction, Constants::VERTICAL_COMMAND) == 0)
+            {
+                CollageCommand* cmd = new CollageCommand(Direction::Vertical, firstFile, secondFile, outImage);
+
+                commands.addCommand(cmd);
+            }
+        }
     }
 }
 

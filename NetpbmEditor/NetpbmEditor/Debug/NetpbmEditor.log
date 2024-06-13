@@ -1,7 +1,2 @@
-﻿  CommandContainer.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(86,20): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(95,20): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\CommandContainer.cpp(116,20): warning C4018: '<': signed/unsigned mismatch
-  NetpbmEditor.cpp
-  Generating Code...
+﻿  CollageCommand.cpp
   NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\Debug\NetpbmEditor.exe

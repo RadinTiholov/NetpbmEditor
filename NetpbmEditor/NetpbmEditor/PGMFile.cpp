@@ -132,3 +132,15 @@ void PGMFile::writeMaxValue(std::ofstream& ofs) const
 {
 	ofs << this->maxValue << ' ';
 }
+
+RasterFile* PGMFile::horizontalCollage(const RasterFile* other, const char* fileName) const
+{
+	//TODO
+	return nullptr;
+}
+
+RasterFile* PGMFile::verticalCollage(const RasterFile* other, const char* fileName) const
+{
+	//TODO
+	return nullptr;
+}

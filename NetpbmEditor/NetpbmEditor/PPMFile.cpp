@@ -150,3 +150,15 @@ void PPMFile::serializeContentToBinary(std::ofstream& ofs) const
 		}
 	}
 }
+
+RasterFile* PPMFile::horizontalCollage(const RasterFile* other, const char* fileName) const 
+{
+	//TODO
+	return nullptr;
+}
+
+RasterFile* PPMFile::verticalCollage(const RasterFile* other, const char* fileName) const 
+{
+	//TODO
+	return nullptr;
+}

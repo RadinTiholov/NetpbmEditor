@@ -26,14 +26,21 @@ protected:
 
 	virtual void rotateLeft() = 0;
 	virtual void rotateRight() = 0;
+
+	virtual RasterFile* horizontalCollage(const RasterFile* other, const char* fileName) const = 0;
+	virtual RasterFile* verticalCollage(const RasterFile* other, const char* fileName) const = 0;
 public:
 	virtual void grayscale() = 0;
 	virtual void monochrome() = 0;
 	virtual void negative() = 0;
+	RasterFile* collageWith(const Direction& direction, const RasterFile* other, const char* fileName) const;
 	void rotate(Direction direction);
 
 	void writeMagicNumber(std::ofstream& is) const;
 	void writeWidthAndHeight(std::ofstream& is) const;
+	const char* getFileName() const;
+	unsigned getWidth() const;
+	unsigned getHeight() const;
 	virtual RasterFile* clone() const = 0;
 	virtual void serialize() const = 0;
 	virtual ~RasterFile() = default;
