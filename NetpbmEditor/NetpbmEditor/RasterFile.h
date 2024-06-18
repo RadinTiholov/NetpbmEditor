@@ -5,6 +5,10 @@
 #include <iostream>
 #include "Direction.h"
 
+class PBMFile;
+class PGMFile;
+class PPMFile;
+
 enum class Encoding 
 {
 	ASCII,
@@ -44,4 +48,11 @@ public:
 	virtual RasterFile* clone() const = 0;
 	virtual void serialize() const = 0;
 	virtual ~RasterFile() = default;
+
+	virtual RasterFile* horizontalCollageWithPBM(const PBMFile* other, const char* fileName) const = 0;
+	virtual RasterFile* horizontalCollageWithPGM(const PGMFile* other, const char* fileName) const = 0;
+	virtual RasterFile* horizontalCollageWithPPM(const PPMFile* other, const char* fileName) const = 0;
+	virtual RasterFile* verticalCollageWithPBM(const PBMFile* other, const char* fileName) const = 0;
+	virtual RasterFile* verticalCollageWithPGM(const PGMFile* other, const char* fileName) const = 0;
+	virtual RasterFile* verticalCollageWithPPM(const PPMFile* other, const char* fileName) const = 0;
 };

@@ -23,4 +23,11 @@ private:
 
 	RasterFile* horizontalCollage(const RasterFile* other, const char* fileName) const override;
 	RasterFile* verticalCollage(const RasterFile* other, const char* fileName) const override;
+
+	RasterFile* horizontalCollageWithPBM(const PBMFile* other, const char* fileName) const override;
+	RasterFile* horizontalCollageWithPGM(const PGMFile* other, const char* fileName) const override;
+	RasterFile* horizontalCollageWithPPM(const PPMFile* other, const char* fileName) const override;
+	RasterFile* verticalCollageWithPBM(const PBMFile* other, const char* fileName) const override;
+	RasterFile* verticalCollageWithPGM(const PGMFile* other, const char* fileName) const override;
+	RasterFile* verticalCollageWithPPM(const PPMFile* other, const char* fileName) const override;
 };

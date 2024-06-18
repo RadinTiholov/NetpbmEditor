@@ -102,14 +102,89 @@ void PBMFile::adjustByteWithExcessBits(int& startBit, uint8_t*& bytes, int exces
 
 RasterFile* PBMFile::horizontalCollage(const RasterFile* other, const char* fileName) const
 {
-	//TODO
-	return nullptr;
+	return other->horizontalCollageWithPBM(this, fileName);
 }
 
 RasterFile* PBMFile::verticalCollage(const RasterFile* other, const char* fileName) const
 {
-	//TODO
-	return nullptr;
+	return other->verticalCollageWithPBM(this, fileName);
+}
+
+RasterFile* PBMFile::horizontalCollageWithPBM(const PBMFile* other, const char* newFileName) const 
+{
+	DynamicSet bitset(2 * width * height);
+
+	for (size_t i = 0; i < height; i++)
+	{
+		for (size_t j = 0; j < width; j++)
+		{
+			if (other->content.contains((i * width) + j))
+			{
+				bitset.add((2 * i * width) + j);
+			}
+		}
+		for (size_t j = 0; j < width; j++)
+		{
+			if (this->content.contains((i * width) + j))
+			{
+				bitset.add((2 * i * width) + j + width);
+			}
+		}
+	}
+
+	return new PBMFile(this->magicNumber, 2 * width, height, this->encoding, newFileName, bitset);
+}
+
+RasterFile* PBMFile::horizontalCollageWithPGM(const PGMFile* other, const char* fileName) const 
+{
+	throw std::logic_error(Constants::COLLAGE_MESSAGE);
+}
+
+RasterFile* PBMFile::horizontalCollageWithPPM(const PPMFile* other, const char* fileName) const 
+{
+	throw std::logic_error(Constants::COLLAGE_MESSAGE);
+}
+
+RasterFile* PBMFile::verticalCollageWithPBM(const PBMFile* other, const char* newFileName) const 
+{
+	DynamicSet bitset(2 * width * height);
+
+	int index = 0;
+	for (size_t i = 0; i < height; i++)
+	{
+		for (size_t j = 0; j < width; j++)
+		{
+			if (other->content.contains((i * width) + j))
+			{
+				bitset.add(index);
+			}
+			index++;
+		}
+	}
+
+	for (size_t i = 0; i < height; i++)
+	{
+		for (size_t j = 0; j < width; j++)
+		{
+			if (this->content.contains((i * width) + j))
+			{
+				bitset.add(index);
+			}
+			index++;
+		}
+	}
+
+	return new PBMFile(this->magicNumber, width, 2 * height, this->encoding, newFileName, bitset);
+}
+
+RasterFile* PBMFile::verticalCollageWithPGM(const PGMFile* other, const char* fileName) const 
+{
+	throw std::logic_error(Constants::COLLAGE_MESSAGE);
+}
+
+RasterFile* PBMFile::verticalCollageWithPPM(const PPMFile* other, const char* fileName) const 
+{
+	throw std::logic_error(Constants::COLLAGE_MESSAGE);
 }
 
 RasterFile* PBMFile::clone() const

@@ -153,12 +153,40 @@ void PPMFile::serializeContentToBinary(std::ofstream& ofs) const
 
 RasterFile* PPMFile::horizontalCollage(const RasterFile* other, const char* fileName) const 
 {
-	//TODO
-	return nullptr;
+	return other->horizontalCollageWithPPM(this, fileName);
 }
 
 RasterFile* PPMFile::verticalCollage(const RasterFile* other, const char* fileName) const 
 {
-	//TODO
+	return other->verticalCollageWithPPM(this, fileName);
+}
+
+RasterFile* PPMFile::horizontalCollageWithPBM(const PBMFile* other, const char* fileName) const 
+{
+	throw std::logic_error(Constants::COLLAGE_MESSAGE);
+}
+
+RasterFile* PPMFile::horizontalCollageWithPGM(const PGMFile* other, const char* fileName) const 
+{
+	throw std::logic_error(Constants::COLLAGE_MESSAGE);
+}
+
+RasterFile* PPMFile::horizontalCollageWithPPM(const PPMFile* other, const char* fileName) const 
+{
+	return nullptr;
+}
+
+RasterFile* PPMFile::verticalCollageWithPBM(const PBMFile* other, const char* fileName) const 
+{
+	throw std::logic_error(Constants::COLLAGE_MESSAGE);
+}
+
+RasterFile* PPMFile::verticalCollageWithPGM(const PGMFile* other, const char* fileName) const 
+{
+	throw std::logic_error(Constants::COLLAGE_MESSAGE);
+}
+
+RasterFile* PPMFile::verticalCollageWithPPM(const PPMFile* other, const char* fileName) const 
+{
 	return nullptr;
 }

@@ -6,6 +6,7 @@ const char* Constants::INVALID_MAGIC_NUMBER = "Invalid magic number!";
 const char* Constants::INVALID_WIDTH = "Invalid width!";
 const char* Constants::INVALID_HEIGHT = "Invalid height!";
 const char* Constants::INVALID_MAXVALUE = "Invalid max value!";
+const char* Constants::COLLAGE_MESSAGE = "Cannat make collage if the two files are not the same format!";
 
 const char* Constants::LOAD_COMMAND = "load";
 const char* Constants::SAVE_COMMAND = "save";

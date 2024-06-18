@@ -135,12 +135,40 @@ void PGMFile::writeMaxValue(std::ofstream& ofs) const
 
 RasterFile* PGMFile::horizontalCollage(const RasterFile* other, const char* fileName) const
 {
-	//TODO
-	return nullptr;
+	return other->horizontalCollageWithPGM(this, fileName);
 }
 
 RasterFile* PGMFile::verticalCollage(const RasterFile* other, const char* fileName) const
 {
-	//TODO
+	return other->verticalCollageWithPGM(this, fileName);
+}
+
+RasterFile* PGMFile::horizontalCollageWithPBM(const PBMFile* other, const char* fileName) const 
+{
+	throw std::logic_error(Constants::COLLAGE_MESSAGE);
+}
+
+RasterFile* PGMFile::horizontalCollageWithPGM(const PGMFile* other, const char* fileName) const 
+{
 	return nullptr;
+}
+
+RasterFile* PGMFile::horizontalCollageWithPPM(const PPMFile* other, const char* fileName) const 
+{
+	throw std::logic_error(Constants::COLLAGE_MESSAGE);
+}
+
+RasterFile* PGMFile::verticalCollageWithPBM(const PBMFile* other, const char* fileName) const 
+{
+	throw std::logic_error(Constants::COLLAGE_MESSAGE);
+}
+
+RasterFile* PGMFile::verticalCollageWithPGM(const PGMFile* other, const char* fileName) const 
+{
+	return nullptr;
+}
+
+RasterFile* PGMFile::verticalCollageWithPPM(const PPMFile* other, const char* fileName) const 
+{
+	throw std::logic_error(Constants::COLLAGE_MESSAGE);
 }

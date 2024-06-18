@@ -1,2 +1,6 @@
-﻿  CollageCommand.cpp
+﻿  Engine.cpp
+  PBMFile.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(210,24): warning C4018: '<': signed/unsigned mismatch
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(232,25): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
   NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\Debug\NetpbmEditor.exe
