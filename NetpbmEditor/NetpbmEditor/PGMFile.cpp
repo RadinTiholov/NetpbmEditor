@@ -148,9 +148,23 @@ RasterFile* PGMFile::horizontalCollageWithPBM(const PBMFile* other, const char* 
 	throw std::logic_error(Constants::COLLAGE_MESSAGE);
 }
 
-RasterFile* PGMFile::horizontalCollageWithPGM(const PGMFile* other, const char* fileName) const 
+RasterFile* PGMFile::horizontalCollageWithPGM(const PGMFile* other, const char* newFileName) const 
 {
-	return nullptr;
+	Vector<uint16_t> values(2 * this->width * this->height);
+
+	for (size_t i = 0; i < height; i++)
+	{
+		for (size_t j = 0; j < width; j++)
+		{
+			values.pushBack(this->content[i * width + j]);
+		}
+		for (size_t j = 0; j < width; j++)
+		{
+			values.pushBack(this->content[i * width + j]);
+		}
+	}
+
+	return new PGMFile(this->magicNumber, 2 * width, height, this->encoding, newFileName, this->maxValue, values);
 }
 
 RasterFile* PGMFile::horizontalCollageWithPPM(const PPMFile* other, const char* fileName) const 
@@ -163,9 +177,27 @@ RasterFile* PGMFile::verticalCollageWithPBM(const PBMFile* other, const char* fi
 	throw std::logic_error(Constants::COLLAGE_MESSAGE);
 }
 
-RasterFile* PGMFile::verticalCollageWithPGM(const PGMFile* other, const char* fileName) const 
+RasterFile* PGMFile::verticalCollageWithPGM(const PGMFile* other, const char* newFileName) const 
 {
-	return nullptr;
+	Vector<uint16_t> values(2 * this->width * this->height);
+
+	for (size_t i = 0; i < height; i++)
+	{
+		for (size_t j = 0; j < width; j++)
+		{
+			values.pushBack(this->content[i * width + j]);
+		}
+	}
+
+	for (size_t i = 0; i < height; i++)
+	{
+		for (size_t j = 0; j < width; j++)
+		{
+			values.pushBack(this->content[i * width + j]);
+		}
+	}
+
+	return new PGMFile(this->magicNumber, width, 2 * height, this->encoding, newFileName, this->maxValue, values);
 }
 
 RasterFile* PGMFile::verticalCollageWithPPM(const PPMFile* other, const char* fileName) const 

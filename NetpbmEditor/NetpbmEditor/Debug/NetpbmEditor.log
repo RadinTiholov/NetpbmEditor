@@ -1,6 +1,14 @@
-﻿  Engine.cpp
-  PBMFile.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(210,24): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PBMFile.cpp(232,25): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+﻿  PGMFile.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PGMFile.cpp(37,37): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=uint16_t
+          ]
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PGMFile.cpp(55,24): warning C4018: '<': signed/unsigned mismatch
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PGMFile.cpp(72,25): warning C4018: '<': signed/unsigned mismatch
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PGMFile.cpp(117,18): warning C4244: 'initializing': conversion from 'const T' to 'uint8_t', possible loss of data
+          with
+          [
+              T=uint16_t
+          ]
   NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\Debug\NetpbmEditor.exe
