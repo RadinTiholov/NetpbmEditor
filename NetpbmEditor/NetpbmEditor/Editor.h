@@ -10,6 +10,7 @@ private:
 	Vector<Session> sessions;
 	unsigned indexOfCurrentSession = 0;
 
+	void setIndexOfCurrentSession(int newIndex);
 	void serializeFile(const RasterFile*) const;
 public:
 	void serializeAllFilesInCurrentSession() const;
@@ -29,5 +30,6 @@ public:
 	friend class RotateCommand;
 	friend class AddCommand;
 	friend class CollageCommand;
+	friend class SwitchCommand;
 };
 

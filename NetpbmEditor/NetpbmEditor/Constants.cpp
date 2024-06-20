@@ -2,6 +2,7 @@
 
 const char* Constants::COULD_NOT_OPEN_FILE_ERROR_MESSAGE = "Could not open file!";
 const char* Constants::INVALID_FILE_ERROR_MESSAGE = "Invalid file!";
+const char* Constants::INVALID_INDEX_ERROR_MESSAGE = "Invalid index!";
 const char* Constants::INVALID_MAGIC_NUMBER = "Invalid magic number!";
 const char* Constants::INVALID_WIDTH = "Invalid width!";
 const char* Constants::INVALID_HEIGHT = "Invalid height!";
@@ -20,3 +21,4 @@ const char* Constants::ADD_COMMAND = "add";
 const char* Constants::COLLAGE_COMMAND = "collage";
 const char* Constants::VERTICAL_COMMAND = "vertical";
 const char* Constants::HORIZONTAL_COMMAND = "horizontal";
+const char* Constants::SWITCH_COMMAND = "switch";

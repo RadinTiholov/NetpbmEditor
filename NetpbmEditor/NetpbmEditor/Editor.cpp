@@ -13,6 +13,15 @@ void Editor::serializeFile(const RasterFile* file) const
 	file->serialize();
 }
 
+void Editor::setIndexOfCurrentSession(int newIndex) 
+{
+	if (newIndex < 0 || newIndex >= this->sessions.getSize())
+	{
+		throw std::invalid_argument(Constants::INVALID_INDEX_ERROR_MESSAGE);
+	}
+	this->indexOfCurrentSession = newIndex;
+}
+
 void Editor::saveAs(const char* newFileName) const
 {
 
@@ -22,7 +31,6 @@ void Editor::load(const char* fileName)
 {
 	// TODO: Test this if works
 	unsigned newIndex = this->sessions.getSize();
-	this->indexOfCurrentSession = newIndex;
 	Session session(newIndex);
 
 	// Load image
@@ -31,6 +39,7 @@ void Editor::load(const char* fileName)
 
 	// Add session
 	sessions.pushBack(session);
+	setIndexOfCurrentSession(newIndex);
 }
 
 void Editor::addToCurrentSession(const char* fileName) 

@@ -4,6 +4,7 @@ struct Constants
 {
 	static const char* COULD_NOT_OPEN_FILE_ERROR_MESSAGE;
 	static const char* INVALID_FILE_ERROR_MESSAGE;
+	static const char* INVALID_INDEX_ERROR_MESSAGE;
 	static const char* COLLAGE_MESSAGE;
 	static const char* INVALID_MAGIC_NUMBER;
 	static const char* INVALID_WIDTH;
@@ -21,6 +22,7 @@ struct Constants
 	static const char* COLLAGE_COMMAND;
 	static const char* HORIZONTAL_COMMAND;
 	static const char* VERTICAL_COMMAND;
+	static const char* SWITCH_COMMAND;
 	static constexpr unsigned BASIC_BUFFER_SIZE = 1024;
 	static constexpr double GRAYSCALE_RED = .299;
 	static constexpr double GRAYSCALE_GREEN = .587;

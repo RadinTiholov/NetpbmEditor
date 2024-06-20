@@ -106,6 +106,15 @@ void Engine::parseCommandsFrom(std::istream& ifs)
                 commands.addCommand(cmd);
             }
         }
+        else if (std::strcmp(command, Constants::SWITCH_COMMAND) == 0) 
+        {
+            int id;
+            ss >> id;
+
+            SwitchCommand* cmd = new SwitchCommand(id);
+
+            commands.addCommand(cmd);
+        }
     }
 }
 

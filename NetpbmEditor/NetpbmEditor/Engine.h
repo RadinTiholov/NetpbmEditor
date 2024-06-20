@@ -10,6 +10,7 @@
 #include "CollageCommand.h"
 #include "Constants.h"
 #include "Direction.h"
+#include "SwitchCommand.h"
 #include <sstream>
 
 class Engine
