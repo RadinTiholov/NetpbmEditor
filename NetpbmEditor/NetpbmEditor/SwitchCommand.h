@@ -1,5 +1,6 @@
 #pragma once
 #include "Command.h"
+#include "Constants.h"
 
 class SwitchCommand : public Command
 {

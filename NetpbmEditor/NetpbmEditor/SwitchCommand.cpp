@@ -11,7 +11,7 @@ void SwitchCommand::execute(Editor& editor)
 	try
 	{
 		editor.setIndexOfCurrentSession(id);
-		std::cout << "Switched to" + id << std::endl;
+		std::cout << Constants::SWITCH_COMMAND + id << std::endl;
 	}
 	catch (const std::invalid_argument&)
 	{

@@ -24,5 +24,7 @@ private:
 	void parseCommandsFrom(std::istream& ifs);
 	void executeCommands();
 	void removeCommands();
+	void sessionInfo() const;
+	void undoCommand();
 };
 

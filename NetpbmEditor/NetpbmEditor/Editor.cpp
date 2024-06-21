@@ -67,12 +67,12 @@ void Editor::collage(const Direction& direction, int firstIndex, int secondIndex
 	this->sessions[this->indexOfCurrentSession].addFile(file);
 }
 
-void Editor::close(unsigned sessionId) 
+void Editor::currentSessionInfo() const 
 {
-
+	sessions[indexOfCurrentSession].info();
 }
 
-void Editor::switchSession(unsigned sessionID) 
+void Editor::close(unsigned sessionId) 
 {
 
 }

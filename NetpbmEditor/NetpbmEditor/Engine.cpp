@@ -9,6 +9,7 @@ void Engine::parseCommandsFrom(std::istream& ifs)
 {
     while (true)
     {
+        std::cout << "> ";
         char line[Constants::BASIC_BUFFER_SIZE];
         ifs.getline(line, Constants::BASIC_BUFFER_SIZE);
         std::stringstream ss(line);
@@ -115,7 +116,40 @@ void Engine::parseCommandsFrom(std::istream& ifs)
 
             commands.addCommand(cmd);
         }
+        else if (std::strcmp(command, Constants::SESSION_INFO_COMMAND) == 0) 
+        {
+            char infoText[Constants::BASIC_BUFFER_SIZE];
+            ss >> infoText;
+            if (std::strcmp(infoText, "info") != 0)
+            {
+                continue;
+            }
+            this->sessionInfo();
+        }
+        else if (std::strcmp(command, Constants::UNDO_COMMAND) == 0) 
+        {
+            this->undoCommand();
+        }
     }
+}
+
+void Engine::undoCommand() 
+{
+    for (int i = this->commands.getSize() - 1; i >= 0; i--)
+    {
+        UndoableCommand* cmd = dynamic_cast<UndoableCommand*>(this->commands[i]);
+        if (cmd != nullptr)
+        {
+            this->commands.removeAt(i);
+            return;
+        }
+    }
+    std::cout << Constants::UNDOABLE_MESSAGE << std::endl;
+}
+
+void Engine::sessionInfo() const 
+{
+    this->editor.currentSessionInfo();
 }
 
 // Executes the commands consequentialy

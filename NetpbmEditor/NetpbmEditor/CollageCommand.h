@@ -1,7 +1,7 @@
 #pragma once
-#include "Command.h"
+#include "UndoableCommand.h"
 
-class CollageCommand : public Command
+class CollageCommand : public UndoableCommand
 {
 public:
 	CollageCommand(const Direction& direction, const char* firstFileName, const char* secondFileName, const char* outFileName);

@@ -1,8 +1,8 @@
 #pragma once
-#include "Command.h"
+#include "UndoableCommand.h"
 #include "Direction.h"
 
-class RotateCommand: public Command
+class RotateCommand: public UndoableCommand
 {
 public:
 	RotateCommand(const Direction& direction);

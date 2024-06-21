@@ -1,6 +1,7 @@
 #pragma once
-#include "Command.h"
-class NegativeCommand : public Command
+#include "UndoableCommand.h"
+
+class NegativeCommand : public UndoableCommand
 {
 public:
 	void execute(Editor& editor) override;

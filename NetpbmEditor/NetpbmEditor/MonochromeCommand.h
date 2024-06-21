@@ -1,7 +1,7 @@
 #pragma once
-#include "Command.h"
+#include "UndoableCommand.h"
 
-class MonochromeCommand : public Command
+class MonochromeCommand : public UndoableCommand
 {
 public:
 	void execute(Editor& editor) override;

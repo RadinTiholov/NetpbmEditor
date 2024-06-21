@@ -66,6 +66,23 @@ void CommandContainer::removeLast()
 	this->size--;
 }
 
+void CommandContainer::removeAt(int index) 
+{
+	if (index < 0 || index >= size)
+	{
+		throw std::out_of_range(Constants::INVALID_INDEX_ERROR_MESSAGE);
+	}
+
+	delete data[index];
+
+	for (size_t i = index; i < size - 1; i++)
+	{
+		data[index] = data[index + 1];
+	}
+	data[size - 1] = nullptr;
+	this->size--;
+}
+
 const Command* CommandContainer::operator[](unsigned index) const 
 {
 	return this->data[index];

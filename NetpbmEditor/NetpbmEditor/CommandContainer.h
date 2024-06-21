@@ -15,6 +15,7 @@ public:
 	void addCommand(const Command& shape);
 
 	void removeLast();
+	void removeAt(int index);
 
 	const Command* operator[](unsigned) const;
 	Command* operator[](unsigned);

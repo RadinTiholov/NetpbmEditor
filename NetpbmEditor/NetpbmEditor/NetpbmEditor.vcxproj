@@ -176,6 +176,7 @@
     <ClInclude Include="RotateCommand.h" />
     <ClInclude Include="Session.h" />
     <ClInclude Include="SwitchCommand.h" />
+    <ClInclude Include="UndoableCommand.h" />
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

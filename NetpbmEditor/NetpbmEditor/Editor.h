@@ -19,8 +19,8 @@ public:
 	void addToCurrentSession(const char* fileName);
 	int findFileIndexInCurrentSessionByName(const char* fileName) const;
 	void collage(const Direction& direction, int firstIndex, int secondIndex, const char* outFileName);
+	void currentSessionInfo() const;
 	void close(unsigned sessionId);
-	void switchSession(unsigned sessionID);
 	void help() const;
 	void exit() const;
 	//TODO : undo just remove the last command
