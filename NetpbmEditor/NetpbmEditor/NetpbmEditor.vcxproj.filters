@@ -75,12 +75,6 @@
     <ClCompile Include="MonochromeCommand.cpp">
       <Filter>Source Files\Commands</Filter>
     </ClCompile>
-    <ClCompile Include="LoadCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="MyString.cpp">
-      <Filter>Source Files\Commands</Filter>
-    </ClCompile>
     <ClCompile Include="Constants.cpp">
       <Filter>Source Files\Constants</Filter>
     </ClCompile>
@@ -105,8 +99,8 @@
     <ClCompile Include="CollageCommand.cpp">
       <Filter>Source Files\Commands</Filter>
     </ClCompile>
-    <ClCompile Include="SwitchCommand.cpp">
-      <Filter>Source Files\Commands</Filter>
+    <ClCompile Include="MyString.cpp">
+      <Filter>Source Files\Structures</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -152,9 +146,6 @@
     <ClInclude Include="MonochromeCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="LoadCommand.h">
-      <Filter>Header Files\Commands</Filter>
-    </ClInclude>
     <ClInclude Include="MyString.h">
       <Filter>Header Files\Structures</Filter>
     </ClInclude>
@@ -180,9 +171,6 @@
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
     <ClInclude Include="CollageCommand.h">
-      <Filter>Header Files\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="SwitchCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
     <ClInclude Include="UndoableCommand.h">

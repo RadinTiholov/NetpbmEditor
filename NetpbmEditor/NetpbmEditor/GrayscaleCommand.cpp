@@ -1,8 +1,9 @@
 #include "GrayscaleCommand.h"
+#include "Session.h"
 
-void GrayscaleCommand::execute(Editor& editor)
+void GrayscaleCommand::execute(Session& session)
 {
-	editor.sessions[editor.indexOfCurrentSession].grayScale();
+	session.grayScale();
 }
 
 Command* GrayscaleCommand::clone() const

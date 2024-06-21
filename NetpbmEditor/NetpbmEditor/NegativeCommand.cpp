@@ -1,8 +1,9 @@
 #include "NegativeCommand.h"
+#include "Session.h"
 
-void NegativeCommand::execute(Editor& editor) 
+void NegativeCommand::execute(Session& session)
 {
-	editor.sessions[editor.indexOfCurrentSession].negative();
+	session.negative();
 }
 
 Command* NegativeCommand::clone() const 

@@ -1,8 +1,9 @@
 #include "MonochromeCommand.h"
+#include "Session.h"
 
-void MonochromeCommand::execute(Editor& editor)
+void MonochromeCommand::execute(Session& session)
 {
-	editor.sessions[editor.indexOfCurrentSession].monochrome();
+	session.monochrome();
 };
 
 Command* MonochromeCommand::clone() const 

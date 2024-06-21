@@ -1,13 +1,14 @@
 #include "AddCommand.h"
+#include "Session.h"
 
 AddCommand::AddCommand(const char* fileName) 
 {
 	this->fileName = fileName;
 }
 
-void AddCommand::execute(Editor& editor) 
+void AddCommand::execute(Session& session)
 {
-	editor.addToCurrentSession(this->fileName.c_str());
+	session.createFile(this->fileName.c_str());
 }
 
 Command* AddCommand::clone() const 

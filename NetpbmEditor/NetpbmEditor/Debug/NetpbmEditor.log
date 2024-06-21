@@ -1,3 +1,13 @@
-﻿  Engine.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Engine.cpp(167,26): warning C4018: '<': signed/unsigned mismatch
+﻿  AddCommand.cpp
+  CollageCommand.cpp
+  Editor.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Editor.cpp(5,31): warning C4018: '>=': signed/unsigned mismatch
+  Engine.cpp
+  GrayscaleCommand.cpp
+  MonochromeCommand.cpp
+  NegativeCommand.cpp
+  RotateCommand.cpp
+  Session.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(86,23): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
   NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\Debug\NetpbmEditor.exe

@@ -136,7 +136,6 @@
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="FileFactory.cpp" />
     <ClCompile Include="GrayscaleCommand.cpp" />
-    <ClCompile Include="LoadCommand.cpp" />
     <ClCompile Include="MonochromeCommand.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="NegativeCommand.cpp" />
@@ -149,7 +148,6 @@
     <ClCompile Include="RGBData.cpp" />
     <ClCompile Include="RotateCommand.cpp" />
     <ClCompile Include="Session.cpp" />
-    <ClCompile Include="SwitchCommand.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddCommand.h" />
@@ -163,7 +161,6 @@
     <ClInclude Include="Engine.h" />
     <ClInclude Include="FileFactory.h" />
     <ClInclude Include="GrayscaleCommand.h" />
-    <ClInclude Include="LoadCommand.h" />
     <ClInclude Include="MonochromeCommand.h" />
     <ClInclude Include="MyString.h" />
     <ClInclude Include="NegativeCommand.h" />
@@ -175,7 +172,6 @@
     <ClInclude Include="RGBData.h" />
     <ClInclude Include="RotateCommand.h" />
     <ClInclude Include="Session.h" />
-    <ClInclude Include="SwitchCommand.h" />
     <ClInclude Include="UndoableCommand.h" />
     <ClInclude Include="Vector.hpp" />
   </ItemGroup>

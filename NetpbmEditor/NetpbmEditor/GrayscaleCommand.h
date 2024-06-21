@@ -4,7 +4,7 @@
 class GrayscaleCommand : public UndoableCommand
 {
 public:
-	void execute(Editor& editor) override;
+	void execute(Session& session) override;
 
 	Command* clone() const override;
 };

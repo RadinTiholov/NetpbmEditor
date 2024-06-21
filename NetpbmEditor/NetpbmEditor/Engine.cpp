@@ -21,63 +21,37 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             char fileName[Constants::BASIC_BUFFER_SIZE];
             ss >> fileName;
 
-            LoadCommand* cmd = new LoadCommand(fileName);
-
-            commands.addCommand(cmd);
+            this->editor.load(fileName);
         }
         else if (std::strcmp(command, Constants::SAVE_COMMAND) == 0)
         {
-            this->executeCommands();
-            this->editor.serializeAllFilesInCurrentSession();
-            this->removeCommands();
+            this->editor.save();
         }
         else if(std::strcmp(command, Constants::GRAYSCALE_COMMAND) == 0)
         {
-            GrayscaleCommand* cmd = new GrayscaleCommand();
-
-            commands.addCommand(cmd);
+            this->editor.addGrayscaleCommandToCurrentSession();
         }
         else if (std::strcmp(command, Constants::MONOCHROME_COMMAND) == 0)
         {
-            MonochromeCommand* cmd = new MonochromeCommand();
-
-            commands.addCommand(cmd);
+            this->editor.addMonochromeCommandToCurrentSession();
         }
         else if (std::strcmp(command, Constants::NEGATIVE_COMMAND) == 0)
         {
-            NegativeCommand* cmd = new NegativeCommand();
-
-            commands.addCommand(cmd);
+            this->editor.addNegativeCommandToCurrentSession();
         }
         else if (std::strcmp(command, Constants::ROTATE_COMMAND) == 0)
         {
             char direction[Constants::BASIC_BUFFER_SIZE];
             ss >> direction;
 
-            if (std::strcmp(direction, Constants::LEFT_COMMAND) == 0)
-            {
-                RotateCommand* cmd = new RotateCommand(Direction::Left);
-                commands.addCommand(cmd);
-            }
-            else if (std::strcmp(direction, Constants::RIGHT_COMMAND) == 0)
-            {
-                RotateCommand* cmd = new RotateCommand(Direction::Right);
-                commands.addCommand(cmd);
-            }
-            else 
-            {
-                //TODO
-                throw std::exception();
-            }
+            this->editor.addRotateCommand(direction);
         }
         else if (std::strcmp(command, Constants::ADD_COMMAND) == 0) 
         {
             char fileName[Constants::BASIC_BUFFER_SIZE];
             ss >> fileName;
 
-            AddCommand* cmd = new AddCommand(fileName);
-
-            commands.addCommand(cmd);
+            this->editor.addAddCommand(fileName);
         }
         else if (std::strcmp(command, Constants::COLLAGE_COMMAND) == 0)
         {
@@ -93,27 +67,14 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             char outImage[Constants::BASIC_BUFFER_SIZE];
             ss >> outImage;
 
-            if (std::strcmp(direction, Constants::HORIZONTAL_COMMAND) == 0)
-            {
-                CollageCommand* cmd = new CollageCommand(Direction::Horizontal, firstFile, secondFile, outImage);
-
-                commands.addCommand(cmd);
-            }
-            else if (std::strcmp(direction, Constants::VERTICAL_COMMAND) == 0)
-            {
-                CollageCommand* cmd = new CollageCommand(Direction::Vertical, firstFile, secondFile, outImage);
-
-                commands.addCommand(cmd);
-            }
+            this->editor.addCollageCommand(direction, firstFile, secondFile, outImage);
         }
         else if (std::strcmp(command, Constants::SWITCH_COMMAND) == 0) 
         {
             int id;
             ss >> id;
 
-            SwitchCommand* cmd = new SwitchCommand(id);
-
-            commands.addCommand(cmd);
+            this->editor.switchSessions(id);
         }
         else if (std::strcmp(command, Constants::SESSION_INFO_COMMAND) == 0) 
         {
@@ -123,49 +84,11 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             {
                 continue;
             }
-            this->sessionInfo();
+            this->editor.currentSessionInfo();
         }
         else if (std::strcmp(command, Constants::UNDO_COMMAND) == 0) 
         {
-            this->undoCommand();
+            this->editor.undoCommandFromCurrentSession();
         }
-    }
-}
-
-void Engine::undoCommand() 
-{
-    for (int i = this->commands.getSize() - 1; i >= 0; i--)
-    {
-        UndoableCommand* cmd = dynamic_cast<UndoableCommand*>(this->commands[i]);
-        if (cmd != nullptr)
-        {
-            this->commands.removeAt(i);
-            return;
-        }
-    }
-    std::cout << Constants::UNDOABLE_MESSAGE << std::endl;
-}
-
-void Engine::sessionInfo() const 
-{
-    this->editor.currentSessionInfo();
-}
-
-// Executes the commands consequentialy
-void Engine::executeCommands()
-{
-    for (size_t i = 0; i < this->commands.getSize(); i++)
-    {
-        this->commands[i]->execute(this->editor);
-    }
-}
-
-// Removes all commands
-void Engine::removeCommands() 
-{
-    int size = this->commands.getSize();
-    for (size_t i = 0; i < size; i++)
-    {
-        this->commands.removeLast();
     }
 }

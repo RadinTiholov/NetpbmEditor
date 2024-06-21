@@ -11,7 +11,7 @@ const char* Constants::COLLAGE_MESSAGE = "Cannat make collage if the two files a
 
 const char* Constants::SWITCH_MESSAGE = "You switched to session with ID: ";
 const char* Constants::INVALID_SWITCH_MESSAGE = "Session with such ID does not exist!";
-const char* Constants::UNDOABLE_MESSAGE = "No undoable command available!";
+const char* Constants::UNDOABLE_MESSAGE = "No undoable commands available in current session!";
 
 const char* Constants::LOAD_COMMAND = "load";
 const char* Constants::SAVE_COMMAND = "save";

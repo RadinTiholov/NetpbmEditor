@@ -1,4 +1,5 @@
 #include "CollageCommand.h"
+#include "Session.h"
 
 CollageCommand::CollageCommand(const Direction& direction, const char* firstFileName, const char* secondFileName, const char* outFileName)
 {
@@ -8,23 +9,25 @@ CollageCommand::CollageCommand(const Direction& direction, const char* firstFile
 	this->outFileName = outFileName;
 }
 
-void CollageCommand::execute(Editor& editor)
+void CollageCommand::execute(Session& session)
 {
-	int firstImageIndex = editor.findFileIndexInCurrentSessionByName(firstFileName.c_str());
-	int secondImageIndex = editor.findFileIndexInCurrentSessionByName(secondFileName.c_str());
+	int firstImageIndex = session.findFileIndexByName(firstFileName.c_str());
+	int secondImageIndex = session.findFileIndexByName(secondFileName.c_str());
 	if (firstImageIndex == -1 || secondImageIndex == -1)
 	{
 		// TODO: Some exception here
 	}
-	unsigned firstWidth = editor.sessions[editor.indexOfCurrentSession].files[firstImageIndex]->getWidth();
-	unsigned firstHeight = editor.sessions[editor.indexOfCurrentSession].files[firstImageIndex]->getHeight();
-	unsigned secondWidth = editor.sessions[editor.indexOfCurrentSession].files[secondImageIndex]->getWidth();
-	unsigned secondHeight = editor.sessions[editor.indexOfCurrentSession].files[secondImageIndex]->getHeight();
+	unsigned firstWidth = session.files[firstImageIndex]->getWidth();
+	unsigned firstHeight = session.files[firstImageIndex]->getHeight();
+	unsigned secondWidth = session.files[secondImageIndex]->getWidth();
+	unsigned secondHeight = session.files[secondImageIndex]->getHeight();
 	if (firstWidth != secondWidth || firstHeight != secondHeight)
 	{
 		// TODO: Some exception here
 	}
-	editor.collage(direction, firstImageIndex, secondImageIndex, outFileName.c_str());
+	RasterFile* file = session.collage(direction, firstImageIndex, secondImageIndex, this->outFileName.c_str());
+
+	session.addFile(file);
 }
 
 void CollageCommand::setDirection(const Direction& direction)

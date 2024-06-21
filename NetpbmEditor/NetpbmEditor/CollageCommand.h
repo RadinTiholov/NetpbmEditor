@@ -5,7 +5,7 @@ class CollageCommand : public UndoableCommand
 {
 public:
 	CollageCommand(const Direction& direction, const char* firstFileName, const char* secondFileName, const char* outFileName);
-	void execute(Editor& editor) override;
+	void execute(Session& session) override;
 
 	Command* clone() const override;
 private:

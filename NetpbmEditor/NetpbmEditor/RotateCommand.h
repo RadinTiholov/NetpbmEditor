@@ -6,7 +6,7 @@ class RotateCommand: public UndoableCommand
 {
 public:
 	RotateCommand(const Direction& direction);
-	void execute(Editor& editor) override;
+	void execute(Session& session) override;
 
 	Command* clone() const override;
 private:

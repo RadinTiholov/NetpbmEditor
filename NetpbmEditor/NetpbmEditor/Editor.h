@@ -1,8 +1,15 @@
 #pragma once
 #include "Vector.hpp"
 #include "Session.h"
-#include "RasterFile.h"
-#include "FileFactory.h"
+#include "CommandContainer.h"
+#include "GrayscaleCommand.h"
+#include "MonochromeCommand.h"
+#include "NegativeCommand.h"
+#include "RotateCommand.h"
+#include "AddCommand.h"
+#include "CollageCommand.h"
+#include "Constants.h"
+#include "Direction.h"
 
 class Editor
 {
@@ -11,25 +18,21 @@ private:
 	unsigned indexOfCurrentSession = 0;
 
 	void setIndexOfCurrentSession(int newIndex);
-	void serializeFile(const RasterFile*) const;
 public:
-	void serializeAllFilesInCurrentSession() const;
-	void saveAs(const char* newFileName) const;
+	void saveAs(const char* newFileName);
+	void save();
 	void load(const char* fileName);
-	void addToCurrentSession(const char* fileName);
-	int findFileIndexInCurrentSessionByName(const char* fileName) const;
-	void collage(const Direction& direction, int firstIndex, int secondIndex, const char* outFileName);
+	void undoCommandFromCurrentSession();
+	void switchSessions(int newId);
+	void addGrayscaleCommandToCurrentSession();
+	void addMonochromeCommandToCurrentSession();
+	void addNegativeCommandToCurrentSession();
+	void addRotateCommand(const char* direction);
+	void addAddCommand(const char* fileName);
+	void addCollageCommand(const char* direction, const char* firstFile, const char* secondFile, const char* outImage);
 	void currentSessionInfo() const;
 	void close(unsigned sessionId);
 	void help() const;
 	void exit() const;
-	//TODO : undo just remove the last command
-	friend class GrayscaleCommand;
-	friend class MonochromeCommand;
-	friend class NegativeCommand;
-	friend class RotateCommand;
-	friend class AddCommand;
-	friend class CollageCommand;
-	friend class SwitchCommand;
 };
 

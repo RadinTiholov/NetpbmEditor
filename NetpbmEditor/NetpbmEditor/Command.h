@@ -1,10 +1,13 @@
 #pragma once
-#include "Editor.h"
+#include "Direction.h"
+#include "MyString.h"
+
+class Session;
 
 class Command 
 {
 public:
-	virtual void execute(Editor& editor) = 0;
+	virtual void execute(Session& session) = 0;
 
 	virtual Command* clone() const = 0;
 	virtual ~Command() = default;

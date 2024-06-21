@@ -1,4 +1,5 @@
 #include "RotateCommand.h"
+#include "Session.h"
 
 RotateCommand::RotateCommand(const Direction& direction) 
 {
@@ -14,9 +15,9 @@ void RotateCommand::setDirection(const Direction& direction)
 	this->direction = direction;
 }
 
-void RotateCommand::execute(Editor& editor) 
+void RotateCommand::execute(Session& session)
 {
-	editor.sessions[editor.indexOfCurrentSession].rotate(this->direction);
+	session.rotate(this->direction);
 }
 
 Command* RotateCommand::clone() const
