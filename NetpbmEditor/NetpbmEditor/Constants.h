@@ -9,6 +9,7 @@ struct Constants
 	static const char* INVALID_SWITCH_MESSAGE;
 	static const char* UNDOABLE_MESSAGE;
 	static const char* COLLAGE_MESSAGE;
+	static const char* CONSOLE_PREFIX;
 	static const char* INVALID_MAGIC_NUMBER;
 	static const char* INVALID_WIDTH;
 	static const char* INVALID_HEIGHT;
@@ -28,6 +29,7 @@ struct Constants
 	static const char* SWITCH_COMMAND;
 	static const char* SESSION_INFO_COMMAND;
 	static const char* UNDO_COMMAND;
+	static const char* EXIT_COMMAND;
 	static constexpr unsigned BASIC_BUFFER_SIZE = 1024;
 	static constexpr double GRAYSCALE_RED = .299;
 	static constexpr double GRAYSCALE_GREEN = .587;

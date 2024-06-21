@@ -9,7 +9,7 @@ void Engine::parseCommandsFrom(std::istream& ifs)
 {
     while (true)
     {
-        std::cout << "> ";
+        std::cout << Constants::CONSOLE_PREFIX;
         char line[Constants::BASIC_BUFFER_SIZE];
         ifs.getline(line, Constants::BASIC_BUFFER_SIZE);
         std::stringstream ss(line);
@@ -89,6 +89,10 @@ void Engine::parseCommandsFrom(std::istream& ifs)
         else if (std::strcmp(command, Constants::UNDO_COMMAND) == 0) 
         {
             this->editor.undoCommandFromCurrentSession();
+        }
+        else if (std::strcmp(command, Constants::EXIT_COMMAND) == 0)
+        {
+            break;
         }
     }
 }

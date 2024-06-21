@@ -9,6 +9,7 @@ const char* Constants::INVALID_HEIGHT = "Invalid height!";
 const char* Constants::INVALID_MAXVALUE = "Invalid max value!";
 const char* Constants::COLLAGE_MESSAGE = "Cannat make collage if the two files are not the same format!";
 
+const char* Constants::CONSOLE_PREFIX = "> ";
 const char* Constants::SWITCH_MESSAGE = "You switched to session with ID: ";
 const char* Constants::INVALID_SWITCH_MESSAGE = "Session with such ID does not exist!";
 const char* Constants::UNDOABLE_MESSAGE = "No undoable commands available in current session!";
@@ -28,3 +29,4 @@ const char* Constants::HORIZONTAL_COMMAND = "horizontal";
 const char* Constants::SWITCH_COMMAND = "switch";
 const char* Constants::SESSION_INFO_COMMAND = "session";
 const char* Constants::UNDO_COMMAND = "undo";
+const char* Constants::EXIT_COMMAND = "exit";
