@@ -16,7 +16,6 @@ void Engine::parseCommandsFrom(std::istream& ifs)
         char command[Constants::BASIC_BUFFER_SIZE];
         ss >> command;
 
-        //TODO: Add all commands
         if (std::strcmp(command, Constants::LOAD_COMMAND) == 0)
         {
             char fileName[Constants::BASIC_BUFFER_SIZE];
@@ -164,7 +163,8 @@ void Engine::executeCommands()
 // Removes all commands
 void Engine::removeCommands() 
 {
-    for (size_t i = 0; i < this->commands.getSize(); i++)
+    int size = this->commands.getSize();
+    for (size_t i = 0; i < size; i++)
     {
         this->commands.removeLast();
     }

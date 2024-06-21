@@ -10,6 +10,7 @@ const char* Constants::INVALID_MAXVALUE = "Invalid max value!";
 const char* Constants::COLLAGE_MESSAGE = "Cannat make collage if the two files are not the same format!";
 
 const char* Constants::SWITCH_MESSAGE = "You switched to session with ID: ";
+const char* Constants::INVALID_SWITCH_MESSAGE = "Session with such ID does not exist!";
 const char* Constants::UNDOABLE_MESSAGE = "No undoable command available!";
 
 const char* Constants::LOAD_COMMAND = "load";

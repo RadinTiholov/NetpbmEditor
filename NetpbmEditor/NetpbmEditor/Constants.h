@@ -6,6 +6,7 @@ struct Constants
 	static const char* INVALID_FILE_ERROR_MESSAGE;
 	static const char* INVALID_INDEX_ERROR_MESSAGE;
 	static const char* SWITCH_MESSAGE;
+	static const char* INVALID_SWITCH_MESSAGE;
 	static const char* UNDOABLE_MESSAGE;
 	static const char* COLLAGE_MESSAGE;
 	static const char* INVALID_MAGIC_NUMBER;

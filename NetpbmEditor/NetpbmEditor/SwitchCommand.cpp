@@ -7,15 +7,14 @@ SwitchCommand::SwitchCommand(int id)
 
 void SwitchCommand::execute(Editor& editor)
 {
-	// TODO: Change when you implement ex handling
 	try
 	{
 		editor.setIndexOfCurrentSession(id);
-		std::cout << Constants::SWITCH_COMMAND + id << std::endl;
+		std::cout << Constants::SWITCH_MESSAGE << id << std::endl;
 	}
 	catch (const std::invalid_argument&)
 	{
-		std::cout << Constants::INVALID_INDEX_ERROR_MESSAGE;
+		std::cout << Constants::INVALID_SWITCH_MESSAGE;
 	}
 };
 
