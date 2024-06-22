@@ -35,6 +35,7 @@ struct Constants
 	static const char* EXIT_COMMAND;
 	static const char* CLOSE_COMMAND;
 	static const char* HELP_COMMAND;
+	static const char* RETURN_LINE;
 	static constexpr unsigned BASIC_BUFFER_SIZE = 1024;
 	static constexpr double GRAYSCALE_RED = .299;
 	static constexpr double GRAYSCALE_GREEN = .587;

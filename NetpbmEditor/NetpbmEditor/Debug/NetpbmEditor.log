@@ -40,9 +40,10 @@ D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(49,21): warning C4244: 'initializing': conversion from 'double' to 'uint16_t', possible loss of data
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(72,24): warning C4018: '<': signed/unsigned mismatch
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(89,25): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(135,31): warning C4244: '=': conversion from 'const uint16_t' to 'uint8_t', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(136,31): warning C4244: '=': conversion from 'const uint16_t' to 'uint8_t', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(137,31): warning C4244: '=': conversion from 'const uint16_t' to 'uint8_t', possible loss of data
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(122,26): warning C4018: '<': signed/unsigned mismatch
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(157,31): warning C4244: '=': conversion from 'const uint16_t' to 'uint8_t', possible loss of data
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(158,31): warning C4244: '=': conversion from 'const uint16_t' to 'uint8_t', possible loss of data
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\PPMFile.cpp(159,31): warning C4244: '=': conversion from 'const uint16_t' to 'uint8_t', possible loss of data
   RasterFile.cpp
   RasterFileContainer.cpp
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\RasterFileContainer.cpp(48,20): warning C4018: '<': signed/unsigned mismatch
@@ -54,6 +55,4 @@ D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(122,20): warning C4018: '<': signed/unsigned mismatch
 D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(131,20): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\RasterFile.cpp(55): warning C4715: 'RasterFile::collageWith': not all control paths return a value
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(258): warning C4715: 'FileFactory::createFile': not all control paths return a value
-  NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\Debug\NetpbmEditor.exe
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\RasterFile.cpp : fatal  error C1090: PDB API call failed, error code '3': D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Debug\vc143.pdb

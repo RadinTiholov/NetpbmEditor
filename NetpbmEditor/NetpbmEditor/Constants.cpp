@@ -35,3 +35,5 @@ const char* Constants::UNDO_COMMAND = "undo";
 const char* Constants::EXIT_COMMAND = "exit";
 const char* Constants::CLOSE_COMMAND = "close";
 const char* Constants::HELP_COMMAND = "help";
+
+const char* Constants::RETURN_LINE = "\r\033[K";

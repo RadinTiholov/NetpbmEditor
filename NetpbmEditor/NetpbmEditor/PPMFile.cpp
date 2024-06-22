@@ -109,10 +109,32 @@ void PPMFile::serialize() const
 	if (this->encoding == Encoding::ASCII)
 	{
 		ofs << '\n';
+		std::cout << "[              ]";
+		int startBarBreak = height * width / 7;
+		int barBreak = height * width / 7;
+		int index = 0;
 		for (size_t i = 0; i < height * width; i++)
 		{
+			if (i == barBreak)
+			{
+				std::cout << Constants::RETURN_LINE;
+				std::cout << "[";
+				for (size_t j = 0; j < index; j++)
+				{
+					std::cout << "##";
+				}
+				for (size_t j = index; j < 7; j++)
+				{
+					std::cout << "  ";
+				}
+				std::cout << "]";
+				index++;
+				barBreak += startBarBreak;
+			}
 			ofs << this->content[i].red << ' ' << this->content[i].green << ' ' << this->content[i].blue << ' ';
 		}
+		std::cout << Constants::RETURN_LINE;
+		std::cout << "Saved!" << std::endl;
 	}
 	else if (this->encoding == Encoding::Binary)
 	{
