@@ -1,6 +1,2 @@
-﻿  Editor.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Editor.cpp(132,20): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-  Engine.cpp
-  NetpbmEditor.cpp
-  Generating Code...
+﻿  Engine.cpp
   NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\x64\Debug\NetpbmEditor.exe

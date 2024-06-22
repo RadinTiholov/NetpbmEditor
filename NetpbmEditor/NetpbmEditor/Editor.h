@@ -32,7 +32,7 @@ public:
 	void addAddCommand(const char* fileName);
 	void addCollageCommand(const char* direction, const char* firstFile, const char* secondFile, const char* outImage);
 	void currentSessionInfo() const;
-	void close(unsigned sessionId);
+	void closeCurrentSession();
 	void help() const;
 };
 

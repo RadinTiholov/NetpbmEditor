@@ -144,9 +144,12 @@ void Editor::currentSessionInfo() const
 	this->sessions[indexOfCurrentSession].info();
 }
 
-void Editor::close(unsigned sessionId) 
+void Editor::closeCurrentSession()
 {
 	checkForActiveSession();
+
+	this->indexOfCurrentSession = -1;
+	std::cout << Constants::CLOSE_SESSION_MESSAGE << std::endl;
 }
 
 void Editor::help() const 

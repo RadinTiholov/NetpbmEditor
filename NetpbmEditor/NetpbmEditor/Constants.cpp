@@ -9,6 +9,7 @@ const char* Constants::INVALID_WIDTH = "Invalid width!";
 const char* Constants::INVALID_HEIGHT = "Invalid height!";
 const char* Constants::INVALID_MAXVALUE = "Invalid max value!";
 const char* Constants::COLLAGE_MESSAGE = "Cannat make collage if the two files are not the same format!";
+const char* Constants::CLOSE_SESSION_MESSAGE = "Current session is closed. Please choose (switch) or create a new one (load)!";
 
 const char* Constants::CONSOLE_PREFIX = "> ";
 const char* Constants::SWITCH_MESSAGE = "You switched to session with ID: ";
@@ -31,3 +32,4 @@ const char* Constants::SWITCH_COMMAND = "switch";
 const char* Constants::SESSION_INFO_COMMAND = "session";
 const char* Constants::UNDO_COMMAND = "undo";
 const char* Constants::EXIT_COMMAND = "exit";
+const char* Constants::CLOSE_COMMAND = "close";

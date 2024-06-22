@@ -162,5 +162,16 @@ void Engine::parseCommandsFrom(std::istream& ifs)
         {
             break;
         }
+        else if (std::strcmp(command, Constants::CLOSE_COMMAND) == 0)
+        {
+            try
+            {
+                this->editor.closeCurrentSession();
+            }
+            catch (const std::logic_error& err)
+            {
+                std::cout << err.what() << std::endl;
+            }
+        }
     }
 }
