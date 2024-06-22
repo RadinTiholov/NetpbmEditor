@@ -4,6 +4,7 @@
 #include "CommandContainer.h"
 #include "Constants.h"
 #include "UndoableCommand.h"
+#include "AddCommand.h"
 #include "FileFactory.h"
 
 class Session
@@ -17,7 +18,7 @@ public:
 	void grayScale();
 	void monochrome();
 	void negative();
-	void info() const;
+	void info(); // Not const because of the cast
 	void rotate(const Direction& direction);
 	void serializeAllFiles() const;
 	void executeAllCommands();

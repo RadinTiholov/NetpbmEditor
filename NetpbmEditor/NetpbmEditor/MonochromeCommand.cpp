@@ -10,3 +10,8 @@ Command* MonochromeCommand::clone() const
 {
 	return new MonochromeCommand(*this);
 };
+
+const char* MonochromeCommand::name()
+{
+	return Constants::MONOCHROME_COMMAND;
+}

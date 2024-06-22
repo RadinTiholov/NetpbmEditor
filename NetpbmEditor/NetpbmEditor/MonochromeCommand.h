@@ -7,5 +7,6 @@ public:
 	void execute(Session& session) override;
 
 	Command* clone() const override;
+	const char* name() override;
 };
 

@@ -24,3 +24,8 @@ Command* RotateCommand::clone() const
 {
 	return new RotateCommand(*this);
 }
+
+const char* RotateCommand::name()
+{
+	return this->direction == Direction::Left ? "rotate left" : "rotate right";
+}

@@ -31,7 +31,7 @@ public:
 	void addRotateCommand(const char* direction);
 	void addAddCommand(const char* fileName);
 	void addCollageCommand(const char* direction, const char* firstFile, const char* secondFile, const char* outImage);
-	void currentSessionInfo() const;
+	void currentSessionInfo();
 	void closeCurrentSession();
 	void help() const;
 };

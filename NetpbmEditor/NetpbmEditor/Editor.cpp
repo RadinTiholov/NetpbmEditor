@@ -137,7 +137,7 @@ void Editor::load()
 	setIndexOfCurrentSession(newIndex);
 }
 
-void Editor::currentSessionInfo() const 
+void Editor::currentSessionInfo()
 {
 	checkForActiveSession();
 

@@ -10,3 +10,8 @@ Command* GrayscaleCommand::clone() const
 {
 	return new GrayscaleCommand(*this);
 }
+
+const char* GrayscaleCommand::name()
+{
+	return Constants::GRAYSCALE_COMMAND;
+}

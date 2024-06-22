@@ -10,3 +10,8 @@ Command* NegativeCommand::clone() const
 {
 	return new NegativeCommand(*this);
 }
+
+const char* NegativeCommand::name()
+{
+	return Constants::NEGATIVE_COMMAND;
+}

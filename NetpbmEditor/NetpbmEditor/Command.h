@@ -11,4 +11,5 @@ public:
 
 	virtual Command* clone() const = 0;
 	virtual ~Command() = default;
+	virtual const char* name() = 0;
 };

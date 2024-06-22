@@ -8,6 +8,8 @@ public:
 	AddCommand(const char* fileName);
 	void execute(Session& session) override;
 
+	const char* getFileName() const;
 	Command* clone() const override;
+	const char* name() override;
 };
 

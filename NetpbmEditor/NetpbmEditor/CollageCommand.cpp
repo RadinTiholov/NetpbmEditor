@@ -43,3 +43,8 @@ Command* CollageCommand::clone() const
 {
 	return new CollageCommand(*this);
 }
+
+const char* CollageCommand::name()
+{
+	return Constants::COLLAGE_COMMAND;
+}

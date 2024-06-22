@@ -15,3 +15,13 @@ Command* AddCommand::clone() const
 {
 	return new AddCommand(*this);
 }
+
+const char* AddCommand::getFileName() const 
+{
+	return this->fileName.c_str();
+}
+
+const char* AddCommand::name() 
+{
+	return Constants::ADD_COMMAND;
+}

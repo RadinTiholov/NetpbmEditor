@@ -115,13 +115,26 @@ int Session::findFileIndexByName(const char* fileName) const
 	return -1;
 }
 
-void Session::info() const 
+void Session::info()
 {
-	std::cout << "Information about session with id: " + this->_id << std::endl;
+	std::cout << "Information about session with ID: " <<  this->_id << std::endl;
 	std::cout << "Name of images in the session: ";
-	for (size_t i = 0; i < this->files.getSize(); i++)
+	for (int i = 0; i < this->commands.getSize(); i++)
 	{
-		std::cout << this->files[i]->getFileName();
+		AddCommand* cmd = dynamic_cast<AddCommand*>(this->commands[i]);
+		if (cmd != nullptr)
+		{
+			std::cout << cmd->getFileName() << ' ';
+		}
+	}
+	std::cout << std::endl << "Pending transformations: ";
+	for (int i = 0; i < this->commands.getSize(); i++)
+	{
+		AddCommand* cmd = dynamic_cast<AddCommand*>(this->commands[i]);
+		if (cmd == nullptr)
+		{
+			std::cout << this->commands[i]->name() << ' ';
+		}
 	}
 	std::cout << std::endl;
 }
