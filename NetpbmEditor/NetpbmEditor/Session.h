@@ -24,6 +24,7 @@ public:
 	void executeAllCommands();
 	void removeAllCommands();
 	void undoCommand();
+	void saveAsFirstFile(const char* fileName);
 	RasterFile* collage(const Direction& direction, int indexOfFirst, int indexOfSecond, const char* outFileName);
 
 	friend class Editor;

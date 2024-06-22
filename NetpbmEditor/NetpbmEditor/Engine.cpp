@@ -39,6 +39,20 @@ void Engine::parseCommandsFrom(std::istream& ifs)
                 std::cout << err.what() << std::endl;
             }
         }
+        else if (std::strcmp(command, Constants::SAVE_AS_COMMAND) == 0) 
+        {
+            char fileName[Constants::BASIC_BUFFER_SIZE];
+            ss >> fileName;
+
+            try
+            {
+                this->editor.saveAs(fileName);
+            }
+            catch (const std::logic_error& err)
+            {
+                std::cout << err.what() << std::endl;
+            }
+        }
         else if(std::strcmp(command, Constants::GRAYSCALE_COMMAND) == 0)
         {
             try

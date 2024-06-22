@@ -6,6 +6,7 @@ struct Constants
 	static const char* INVALID_FILE_ERROR_MESSAGE;
 	static const char* INVALID_INDEX_ERROR_MESSAGE;
 	static const char* INVALID_SESSION_ERROR_MESSAGE;
+	static const char* FILES_IN_SESSION_ERROR_MESSAGE;
 	static const char* SWITCH_MESSAGE;
 	static const char* INVALID_SWITCH_MESSAGE;
 	static const char* UNDOABLE_MESSAGE;
@@ -35,6 +36,7 @@ struct Constants
 	static const char* EXIT_COMMAND;
 	static const char* CLOSE_COMMAND;
 	static const char* HELP_COMMAND;
+	static const char* SAVE_AS_COMMAND;
 	static const char* RETURN_LINE;
 	static constexpr unsigned BASIC_BUFFER_SIZE = 1024;
 	static constexpr double GRAYSCALE_RED = .299;

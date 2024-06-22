@@ -138,3 +138,38 @@ void Session::info()
 	}
 	std::cout << std::endl;
 }
+
+void Session::saveAsFirstFile(const char* fileName) 
+{
+	// Create mock session
+	Session mockSession;
+	//Find the first add command
+	for (size_t i = 0; i < this->commands.getSize(); i++)
+	{
+		AddCommand* cmd = dynamic_cast<AddCommand*>(this->commands[i]);
+		if (cmd != nullptr)
+		{
+			cmd->execute(mockSession);
+			break;
+		}
+	}
+
+	//Change the name of the file
+	mockSession.files[0]->setFileName(fileName);
+
+	//Remove all add commands
+	CommandContainer commandsWithoutAdd;
+	for (size_t i = 0; i < this->commands.getSize(); i++)
+	{
+		AddCommand* cmd = dynamic_cast<AddCommand*>(this->commands[i]);
+		if (cmd == nullptr)
+		{
+			commandsWithoutAdd.addCommand(this->commands[i]);
+		}
+	}
+	mockSession.commands = commandsWithoutAdd;
+
+	// Execute all transformations on the file and save
+	mockSession.executeAllCommands();
+	mockSession.serializeAllFiles();
+}

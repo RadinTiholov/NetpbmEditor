@@ -15,6 +15,11 @@ const char* RasterFile::getFileName() const
 	return this->fileName.c_str();
 }
 
+void RasterFile::setFileName(const char* fileName)
+{
+	this->fileName = fileName;
+}
+
 unsigned RasterFile::getWidth() const 
 {
 	return this->width;

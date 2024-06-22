@@ -43,6 +43,7 @@ public:
 	void writeMagicNumber(std::ofstream& is) const;
 	void writeWidthAndHeight(std::ofstream& is) const;
 	const char* getFileName() const;
+	void setFileName(const char* fileName);
 	unsigned getWidth() const;
 	unsigned getHeight() const;
 	virtual RasterFile* clone() const = 0;

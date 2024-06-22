@@ -20,6 +20,8 @@ void Editor::checkForActiveSession() const
 void Editor::saveAs(const char* newFileName)
 {
 	checkForActiveSession();
+
+	this->sessions[indexOfCurrentSession].saveAsFirstFile(newFileName);
 }
 
 void Editor::save() 
