@@ -103,14 +103,10 @@ void Editor::addCollageCommand(const char* direction, const char* firstFile, con
 	}
 }
 
-void Editor::load(const char* fileName) 
+void Editor::load() 
 {
 	unsigned newIndex = this->sessions.getSize();
 	Session session(newIndex);
-	
-	// Create add command for the 
-	AddCommand* cmd = new AddCommand(fileName);
-	session.commands.addCommand(cmd);
 
 	// Add session
 	sessions.pushBack(session);

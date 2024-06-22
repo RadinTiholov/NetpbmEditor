@@ -21,7 +21,7 @@ private:
 public:
 	void saveAs(const char* newFileName);
 	void save();
-	void load(const char* fileName);
+	void load();
 	void undoCommandFromCurrentSession();
 	void switchSessions(int newId);
 	void addGrayscaleCommandToCurrentSession();

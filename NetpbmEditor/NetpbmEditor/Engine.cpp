@@ -19,9 +19,14 @@ void Engine::parseCommandsFrom(std::istream& ifs)
         if (std::strcmp(command, Constants::LOAD_COMMAND) == 0)
         {
             char fileName[Constants::BASIC_BUFFER_SIZE];
-            ss >> fileName;
 
-            this->editor.load(fileName);
+            this->editor.load();
+
+            while (!ss.eof())
+            {
+                ss >> fileName;
+                this->editor.addAddCommand(fileName);
+            }
         }
         else if (std::strcmp(command, Constants::SAVE_COMMAND) == 0)
         {
