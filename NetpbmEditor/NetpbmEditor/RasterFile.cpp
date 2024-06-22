@@ -30,6 +30,16 @@ unsigned RasterFile::getHeight() const
 	return this->height;
 }
 
+bool RasterFile::isMonochrome() const 
+{
+	return this->_isMonochrome;
+}
+
+bool RasterFile::isGrayscale() const 
+{
+	return this->_isGrayscale;
+}
+
 void RasterFile::rotate(Direction direction) 
 {
 	if (direction == Direction::Left)

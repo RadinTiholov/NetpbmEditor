@@ -9,6 +9,8 @@ PPMFile::PPMFile(unsigned magicNumber, unsigned width, unsigned height, Encoding
 	this->fileName = MyString(fileName);
 	this->encoding = encoding;
 	this->content = values;
+	this->_isGrayscale = false;
+	this->_isMonochrome = false;
 }
 
 void PPMFile::setMaxValue(unsigned maxValue)
@@ -40,6 +42,7 @@ void PPMFile::grayscale()
 		this->content[i].blue = grayscale;
 	}
 	std::cout << "Grayscale applied" << std::endl;
+	this->_isGrayscale = true;
 }
 
 void PPMFile::monochrome() 
@@ -52,6 +55,8 @@ void PPMFile::monochrome()
 		this->content[i].blue = newValue * this->maxValue;
 	}
 	std::cout << "Monochrome applied" << std::endl;
+	this->_isGrayscale = true;
+	this->_isMonochrome = true;
 };
 
 void PPMFile::negative() 

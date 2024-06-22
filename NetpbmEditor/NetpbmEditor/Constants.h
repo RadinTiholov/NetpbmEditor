@@ -13,6 +13,8 @@ struct Constants
 	static const char* COLLAGE_MESSAGE;
 	static const char* CLOSE_SESSION_MESSAGE;
 	static const char* HELP_MESSAGE;
+	static const char* GRAYSCALE_MESSAGE;
+	static const char* MONOCHROME_MESSAGE;
 	static const char* CONSOLE_PREFIX;
 	static const char* INVALID_MAGIC_NUMBER;
 	static const char* INVALID_WIDTH;

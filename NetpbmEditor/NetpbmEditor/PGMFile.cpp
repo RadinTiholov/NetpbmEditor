@@ -9,6 +9,8 @@ PGMFile::PGMFile(unsigned magicNumber, unsigned width, unsigned height, Encoding
 	this->fileName = MyString(fileName);
 	this->encoding = encoding;
 	this->content = values;
+	this->_isGrayscale = true;
+	this->_isMonochrome = false;
 }
 
 void PGMFile::setMaxValue(unsigned maxValue)
@@ -27,7 +29,7 @@ RasterFile* PGMFile::clone() const
 
 void PGMFile::grayscale()
 {
-
+	std::cout << this->getFileName() << Constants::GRAYSCALE_MESSAGE << std::endl;
 }
 
 void PGMFile::monochrome()
@@ -37,6 +39,7 @@ void PGMFile::monochrome()
 		this->content[i] = this->maxValue * std::round((double)this->content[i] / this->maxValue);
 	}
 	std::cout << "Monochrome applied" << std::endl;
+	this->_isMonochrome = true;
 };
 
 void PGMFile::negative()

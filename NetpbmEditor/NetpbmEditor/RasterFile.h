@@ -18,6 +18,8 @@ enum class Encoding
 class RasterFile 
 {
 protected:
+	bool _isMonochrome;
+	bool _isGrayscale;
 	unsigned magicNumber;
 	unsigned width;
 	unsigned height;
@@ -46,6 +48,9 @@ public:
 	void setFileName(const char* fileName);
 	unsigned getWidth() const;
 	unsigned getHeight() const;
+	bool isMonochrome() const;
+	bool isGrayscale() const;
+
 	virtual RasterFile* clone() const = 0;
 	virtual void serialize() const = 0;
 	virtual ~RasterFile() = default;

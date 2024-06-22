@@ -13,6 +13,8 @@ PBMFile::PBMFile(unsigned magicNumber, unsigned width, unsigned height, Encoding
 	this->fileName = MyString(fileName);
 	this->encoding = encoding;
 	this->content = set;
+	this->_isGrayscale = true;
+	this->_isMonochrome = true;
 }
 
 void PBMFile::serialize() const
@@ -194,12 +196,12 @@ RasterFile* PBMFile::clone() const
 
 void PBMFile::grayscale()
 {
-
+	std::cout << this->getFileName() << Constants::GRAYSCALE_MESSAGE << std::endl;
 }
 
 void PBMFile::monochrome()
 {
-
+	std::cout << this->getFileName() << Constants::MONOCHROME_MESSAGE << std::endl;
 }
 
 void PBMFile::rotateRight()

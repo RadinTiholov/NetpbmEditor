@@ -30,7 +30,10 @@ void Session::grayScale()
 {
 	for (size_t i = 0; i < this->files.getSize(); i++)
 	{
-		this->files[i]->grayscale();
+		if (!this->files[i]->isGrayscale())
+		{
+			this->files[i]->grayscale();
+		}
 	}
 }
 
@@ -38,7 +41,10 @@ void Session::monochrome()
 {
 	for (size_t i = 0; i < this->files.getSize(); i++)
 	{
-		this->files[i]->monochrome();
+		if (!this->files[i]->isMonochrome())
+		{
+			this->files[i]->monochrome();
+		}
 	}
 }
 
