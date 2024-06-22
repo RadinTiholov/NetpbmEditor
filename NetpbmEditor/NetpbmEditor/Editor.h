@@ -15,9 +15,10 @@ class Editor
 {
 private:
 	Vector<Session> sessions;
-	unsigned indexOfCurrentSession = 0;
+	unsigned indexOfCurrentSession = -1;
 
 	void setIndexOfCurrentSession(int newIndex);
+	void checkForActiveSession() const;
 public:
 	void saveAs(const char* newFileName);
 	void save();
@@ -33,6 +34,5 @@ public:
 	void currentSessionInfo() const;
 	void close(unsigned sessionId);
 	void help() const;
-	void exit() const;
 };
 

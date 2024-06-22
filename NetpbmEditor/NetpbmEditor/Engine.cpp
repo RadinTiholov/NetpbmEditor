@@ -30,49 +30,98 @@ void Engine::parseCommandsFrom(std::istream& ifs)
         }
         else if (std::strcmp(command, Constants::SAVE_COMMAND) == 0)
         {
-            this->editor.save();
+            try
+            {
+                this->editor.save();
+            }
+            catch (const std::logic_error& err)
+            {
+                std::cout << err.what() << std::endl;
+            }
         }
         else if(std::strcmp(command, Constants::GRAYSCALE_COMMAND) == 0)
         {
-            this->editor.addGrayscaleCommandToCurrentSession();
+            try
+            {
+                this->editor.addGrayscaleCommandToCurrentSession();
+            }
+            catch (const std::logic_error& err)
+            {
+                std::cout << err.what() << std::endl;
+            }
         }
         else if (std::strcmp(command, Constants::MONOCHROME_COMMAND) == 0)
         {
-            this->editor.addMonochromeCommandToCurrentSession();
+            try
+            {
+                this->editor.addMonochromeCommandToCurrentSession();
+            }
+            catch (const std::logic_error& err)
+            {
+                std::cout << err.what() << std::endl;
+            }
         }
         else if (std::strcmp(command, Constants::NEGATIVE_COMMAND) == 0)
         {
-            this->editor.addNegativeCommandToCurrentSession();
+            try
+            {
+                this->editor.addNegativeCommandToCurrentSession();
+            }
+            catch (const std::logic_error& err)
+            {
+                std::cout << err.what() << std::endl;
+            }
         }
         else if (std::strcmp(command, Constants::ROTATE_COMMAND) == 0)
         {
-            char direction[Constants::BASIC_BUFFER_SIZE];
-            ss >> direction;
+            try
+            {
+                char direction[Constants::BASIC_BUFFER_SIZE];
+                ss >> direction;
 
-            this->editor.addRotateCommand(direction);
+                this->editor.addRotateCommand(direction);
+            }
+            catch (const std::logic_error& err)
+            {
+                std::cout << err.what() << std::endl;
+            }
         }
         else if (std::strcmp(command, Constants::ADD_COMMAND) == 0) 
         {
-            char fileName[Constants::BASIC_BUFFER_SIZE];
-            ss >> fileName;
+            try
+            {
+                char fileName[Constants::BASIC_BUFFER_SIZE];
+                ss >> fileName;
 
-            this->editor.addAddCommand(fileName);
+                this->editor.addAddCommand(fileName);
+            }
+            catch (const std::logic_error& err)
+            {
+                std::cout << err.what() << std::endl;
+            }
         }
         else if (std::strcmp(command, Constants::COLLAGE_COMMAND) == 0)
         {
-            char direction[Constants::BASIC_BUFFER_SIZE];
-            ss >> direction;
+            try
+            {
+                char direction[Constants::BASIC_BUFFER_SIZE];
+                ss >> direction;
 
-            char firstFile[Constants::BASIC_BUFFER_SIZE];
-            ss >> firstFile;
+                char firstFile[Constants::BASIC_BUFFER_SIZE];
+                ss >> firstFile;
 
-            char secondFile[Constants::BASIC_BUFFER_SIZE];
-            ss >> secondFile;
+                char secondFile[Constants::BASIC_BUFFER_SIZE];
+                ss >> secondFile;
 
-            char outImage[Constants::BASIC_BUFFER_SIZE];
-            ss >> outImage;
+                char outImage[Constants::BASIC_BUFFER_SIZE];
+                ss >> outImage;
 
-            this->editor.addCollageCommand(direction, firstFile, secondFile, outImage);
+                this->editor.addCollageCommand(direction, firstFile, secondFile, outImage);
+            }
+            catch (const std::logic_error& err)
+            {
+                std::cout << err.what() << std::endl;
+            }
         }
         else if (std::strcmp(command, Constants::SWITCH_COMMAND) == 0) 
         {
@@ -83,17 +132,31 @@ void Engine::parseCommandsFrom(std::istream& ifs)
         }
         else if (std::strcmp(command, Constants::SESSION_INFO_COMMAND) == 0) 
         {
-            char infoText[Constants::BASIC_BUFFER_SIZE];
-            ss >> infoText;
-            if (std::strcmp(infoText, "info") != 0)
+            try
             {
-                continue;
+                char infoText[Constants::BASIC_BUFFER_SIZE];
+                ss >> infoText;
+                if (std::strcmp(infoText, "info") != 0)
+                {
+                    continue;
+                }
+                this->editor.currentSessionInfo();
             }
-            this->editor.currentSessionInfo();
+            catch (const std::logic_error& err)
+            {
+                std::cout << err.what() << std::endl;
+            }
         }
         else if (std::strcmp(command, Constants::UNDO_COMMAND) == 0) 
         {
-            this->editor.undoCommandFromCurrentSession();
+            try
+            {
+                this->editor.undoCommandFromCurrentSession();
+            }
+            catch (const std::logic_error& err)
+            {
+                std::cout << err.what() << std::endl;
+            }
         }
         else if (std::strcmp(command, Constants::EXIT_COMMAND) == 0)
         {

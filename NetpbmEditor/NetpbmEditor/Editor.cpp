@@ -9,13 +9,23 @@ void Editor::setIndexOfCurrentSession(int newIndex)
 	this->indexOfCurrentSession = newIndex;
 }
 
+void Editor::checkForActiveSession() const 
+{
+	if (indexOfCurrentSession == -1)
+	{
+		throw std::logic_error(Constants::INVALID_SESSION_ERROR_MESSAGE);
+	}
+}
+
 void Editor::saveAs(const char* newFileName)
 {
-
+	checkForActiveSession();
 }
 
 void Editor::save() 
 {
+	checkForActiveSession();
+
 	this->sessions[indexOfCurrentSession].executeAllCommands();
 	this->sessions[indexOfCurrentSession].serializeAllFiles();
 	this->sessions[indexOfCurrentSession].removeAllCommands();
@@ -23,6 +33,8 @@ void Editor::save()
 
 void Editor::undoCommandFromCurrentSession()
 {
+	checkForActiveSession();
+
 	this->sessions[indexOfCurrentSession].undoCommand();
 }
 
@@ -41,6 +53,8 @@ void Editor::switchSessions(int newId)
 
 void Editor::addGrayscaleCommandToCurrentSession() 
 {
+	checkForActiveSession();
+
 	GrayscaleCommand* cmd = new GrayscaleCommand();
 
 	this->sessions[indexOfCurrentSession].commands.addCommand(cmd);
@@ -49,6 +63,8 @@ void Editor::addGrayscaleCommandToCurrentSession()
 
 void Editor::addMonochromeCommandToCurrentSession() 
 {
+	checkForActiveSession();
+
 	MonochromeCommand* cmd = new MonochromeCommand();
 
 	this->sessions[indexOfCurrentSession].commands.addCommand(cmd);
@@ -56,6 +72,8 @@ void Editor::addMonochromeCommandToCurrentSession()
 
 void Editor::addNegativeCommandToCurrentSession() 
 {
+	checkForActiveSession();
+
 	NegativeCommand* cmd = new NegativeCommand();
 
 	this->sessions[indexOfCurrentSession].commands.addCommand(cmd);
@@ -63,6 +81,8 @@ void Editor::addNegativeCommandToCurrentSession()
 
 void Editor::addRotateCommand(const char* direction) 
 {
+	checkForActiveSession();
+
 	if (std::strcmp(direction, Constants::LEFT_COMMAND) == 0)
 	{
 		RotateCommand* cmd = new RotateCommand(Direction::Left);
@@ -82,6 +102,8 @@ void Editor::addRotateCommand(const char* direction)
 
 void Editor::addAddCommand(const char* fileName)
 {
+	checkForActiveSession();
+
 	AddCommand* cmd = new AddCommand(fileName);
 
 	this->sessions[indexOfCurrentSession].commands.addCommand(cmd);
@@ -89,6 +111,8 @@ void Editor::addAddCommand(const char* fileName)
 
 void Editor::addCollageCommand(const char* direction, const char* firstFile, const char* secondFile, const char* outImage)
 {
+	checkForActiveSession();
+
 	if (std::strcmp(direction, Constants::HORIZONTAL_COMMAND) == 0)
 	{
 		CollageCommand* cmd = new CollageCommand(Direction::Horizontal, firstFile, secondFile, outImage);
@@ -115,19 +139,17 @@ void Editor::load()
 
 void Editor::currentSessionInfo() const 
 {
+	checkForActiveSession();
+
 	this->sessions[indexOfCurrentSession].info();
 }
 
 void Editor::close(unsigned sessionId) 
 {
-
+	checkForActiveSession();
 }
 
 void Editor::help() const 
-{
-
-}
-void Editor::exit() const 
 {
 
 }
