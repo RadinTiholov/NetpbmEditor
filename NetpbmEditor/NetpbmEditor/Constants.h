@@ -11,6 +11,7 @@ struct Constants
 	static const char* UNDOABLE_MESSAGE;
 	static const char* COLLAGE_MESSAGE;
 	static const char* CLOSE_SESSION_MESSAGE;
+	static const char* HELP_MESSAGE;
 	static const char* CONSOLE_PREFIX;
 	static const char* INVALID_MAGIC_NUMBER;
 	static const char* INVALID_WIDTH;
@@ -33,6 +34,7 @@ struct Constants
 	static const char* UNDO_COMMAND;
 	static const char* EXIT_COMMAND;
 	static const char* CLOSE_COMMAND;
+	static const char* HELP_COMMAND;
 	static constexpr unsigned BASIC_BUFFER_SIZE = 1024;
 	static constexpr double GRAYSCALE_RED = .299;
 	static constexpr double GRAYSCALE_GREEN = .587;

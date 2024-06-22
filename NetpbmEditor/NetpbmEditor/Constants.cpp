@@ -10,6 +10,7 @@ const char* Constants::INVALID_HEIGHT = "Invalid height!";
 const char* Constants::INVALID_MAXVALUE = "Invalid max value!";
 const char* Constants::COLLAGE_MESSAGE = "Cannat make collage if the two files are not the same format!";
 const char* Constants::CLOSE_SESSION_MESSAGE = "Current session is closed. Please choose (switch) or create a new one (load)!";
+const char* Constants::HELP_MESSAGE = "Welcome to the Image Processing Program! Below are the available commands:\n 1. load <file1> <file2> ...: Starts a new user session with the given image files.\n 2. close: Closes the current session.\n 3. save: Saves all images in the current session with all applied transformations.\n 4. saveas <new_filename>: Saves the first loaded image under a new name with all applied transformations.\n 5. exit: Exits the program.\n Transformations:\n 1. grayscale: Converts all color images in the current session to grayscale.\n 2. monochrome: Converts all color images in the current session to black and white.\n 3. negative: Applies a negative filter to all images in the current session.\n 4. rotate <direction>: Rotates all images in the current session 90 degrees. <direction>: left or right.\n 5. collage <direction> <image1> <image2> <outimage>: Creates a collage from two images and adds the result to the current session. <direction>: horizontal or vertical.\n Session Management:\n 1. undo: Reverts the last transformation applied in the current session.\n 2. add <image>: Adds a new image to the current session without applying existing transformations.\n 3. session info: Displays information about the current session, including the session ID, loaded images, and pending transformations.\n 4. switch <session>: Switches to the session with the given ID.\n";
 
 const char* Constants::CONSOLE_PREFIX = "> ";
 const char* Constants::SWITCH_MESSAGE = "You switched to session with ID: ";
@@ -33,3 +34,4 @@ const char* Constants::SESSION_INFO_COMMAND = "session";
 const char* Constants::UNDO_COMMAND = "undo";
 const char* Constants::EXIT_COMMAND = "exit";
 const char* Constants::CLOSE_COMMAND = "close";
+const char* Constants::HELP_COMMAND = "help";

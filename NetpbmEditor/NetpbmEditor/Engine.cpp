@@ -162,6 +162,10 @@ void Engine::parseCommandsFrom(std::istream& ifs)
         {
             break;
         }
+        else if (std::strcmp(command, Constants::HELP_COMMAND) == 0)
+        {
+            std::cout << Constants::HELP_MESSAGE;
+        }
         else if (std::strcmp(command, Constants::CLOSE_COMMAND) == 0)
         {
             try
