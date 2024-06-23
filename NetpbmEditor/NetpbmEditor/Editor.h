@@ -33,6 +33,5 @@ public:
 	void addCollageCommand(const char* direction, const char* firstFile, const char* secondFile, const char* outImage);
 	void currentSessionInfo();
 	void closeCurrentSession();
-	void help() const;
 };
 

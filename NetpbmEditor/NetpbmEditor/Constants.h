@@ -7,12 +7,17 @@ struct Constants
 	static const char* INVALID_INDEX_ERROR_MESSAGE;
 	static const char* INVALID_SESSION_ERROR_MESSAGE;
 	static const char* FILES_IN_SESSION_ERROR_MESSAGE;
+	static const char* INVALID_DIRECTION_ERROR_MESSAGE;
+	static const char* SOMETHING_WENT_WRONG_ERROR_MESSAGE;
+	static const char* FILES_DOES_NOT_EXIST_ERROR_MESSAGE;
+	static const char* DIMENSIONALITY_ERROR_MESSAGE;
 	static const char* SWITCH_MESSAGE;
 	static const char* INVALID_SWITCH_MESSAGE;
 	static const char* UNDOABLE_MESSAGE;
 	static const char* COLLAGE_MESSAGE;
 	static const char* CLOSE_SESSION_MESSAGE;
 	static const char* HELP_MESSAGE;
+	static const char* INVALID_COMMAND_MESSAGE;
 	static const char* GRAYSCALE_MESSAGE;
 	static const char* MONOCHROME_MESSAGE;
 	static const char* CONSOLE_PREFIX;

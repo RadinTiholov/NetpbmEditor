@@ -13,6 +13,8 @@ Session::Session(unsigned id)
 void Session::addFile(RasterFile* file) 
 {
 	this->files.addFile(file);
+
+	std::cout << "Image \"" << file->getFileName() << "\" added" << std::endl;
 }
 
 void Session::createFile(const char* fileName)
@@ -123,7 +125,6 @@ int Session::findFileIndexByName(const char* fileName) const
 
 void Session::info()
 {
-	std::cout << "Information about session with ID: " <<  this->_id << std::endl;
 	std::cout << "Name of images in the session: ";
 	for (int i = 0; i < this->commands.getSize(); i++)
 	{

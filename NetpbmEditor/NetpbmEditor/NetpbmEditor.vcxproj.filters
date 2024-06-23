@@ -161,9 +161,6 @@
     <ClInclude Include="NegativeCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
-    <ClInclude Include="Direction.h">
-      <Filter>Source Files\Constants</Filter>
-    </ClInclude>
     <ClInclude Include="RotateCommand.h">
       <Filter>Header Files\Commands</Filter>
     </ClInclude>
@@ -175,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="UndoableCommand.h">
       <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Direction.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -15,7 +15,7 @@ void CollageCommand::execute(Session& session)
 	int secondImageIndex = session.findFileIndexByName(secondFileName.c_str());
 	if (firstImageIndex == -1 || secondImageIndex == -1)
 	{
-		// TODO: Some exception here
+		throw std::logic_error(Constants::FILES_DOES_NOT_EXIST_ERROR_MESSAGE);
 	}
 	unsigned firstWidth = session.files[firstImageIndex]->getWidth();
 	unsigned firstHeight = session.files[firstImageIndex]->getHeight();
@@ -23,7 +23,7 @@ void CollageCommand::execute(Session& session)
 	unsigned secondHeight = session.files[secondImageIndex]->getHeight();
 	if (firstWidth != secondWidth || firstHeight != secondHeight)
 	{
-		// TODO: Some exception here
+		throw std::logic_error(Constants::DIMENSIONALITY_ERROR_MESSAGE);
 	}
 	RasterFile* file = session.collage(direction, firstImageIndex, secondImageIndex, this->outFileName.c_str());
 

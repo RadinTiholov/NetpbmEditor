@@ -60,11 +60,12 @@ RasterFile* RasterFile::collageWith(const Direction& direction, const RasterFile
 {
 	if (direction == Direction::Horizontal)
 	{
+		std::cout << "New collage \"" << fileName << "\" created" << std::endl;
 		return this->horizontalCollage(other, fileName);
 	}
 	else if (direction == Direction::Vertical)
 	{
-
+		std::cout << "New collage \"" << fileName << "\" created" << std::endl;
 		return this->verticalCollage(other, fileName);
 	}
 }

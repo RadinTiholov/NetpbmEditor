@@ -46,6 +46,7 @@ void Editor::switchSessions(int newId)
 	{
 		setIndexOfCurrentSession(newId);
 		std::cout << Constants::SWITCH_MESSAGE << newId << std::endl;
+		this->sessions[indexOfCurrentSession].info();
 	}
 	catch (const std::invalid_argument&)
 	{
@@ -97,8 +98,7 @@ void Editor::addRotateCommand(const char* direction)
 	}
 	else
 	{
-		//TODO
-		throw std::exception();
+		throw std::invalid_argument(Constants::INVALID_DIRECTION_ERROR_MESSAGE);
 	}
 }
 
@@ -137,6 +137,8 @@ void Editor::load()
 	// Add session
 	sessions.pushBack(session);
 	setIndexOfCurrentSession(newIndex);
+
+	std::cout << "Session with ID: " << newIndex << " started" << std::endl;
 }
 
 void Editor::currentSessionInfo()
@@ -152,9 +154,4 @@ void Editor::closeCurrentSession()
 
 	this->indexOfCurrentSession = -1;
 	std::cout << Constants::CLOSE_SESSION_MESSAGE << std::endl;
-}
-
-void Editor::help() const 
-{
-
 }

@@ -38,6 +38,10 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             {
                 std::cout << err.what() << std::endl;
             }
+            catch (...) 
+            {
+                std::cout << Constants::SOMETHING_WENT_WRONG_ERROR_MESSAGE << std::endl;
+            }
         }
         else if (std::strcmp(command, Constants::SAVE_AS_COMMAND) == 0) 
         {
@@ -52,6 +56,10 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             {
                 std::cout << err.what() << std::endl;
             }
+            catch (...)
+            {
+                std::cout << Constants::SOMETHING_WENT_WRONG_ERROR_MESSAGE << std::endl;
+            }
         }
         else if(std::strcmp(command, Constants::GRAYSCALE_COMMAND) == 0)
         {
@@ -62,6 +70,10 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             catch (const std::logic_error& err)
             {
                 std::cout << err.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << Constants::SOMETHING_WENT_WRONG_ERROR_MESSAGE << std::endl;
             }
         }
         else if (std::strcmp(command, Constants::MONOCHROME_COMMAND) == 0)
@@ -74,6 +86,10 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             {
                 std::cout << err.what() << std::endl;
             }
+            catch (...)
+            {
+                std::cout << Constants::SOMETHING_WENT_WRONG_ERROR_MESSAGE << std::endl;
+            }
         }
         else if (std::strcmp(command, Constants::NEGATIVE_COMMAND) == 0)
         {
@@ -84,6 +100,10 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             catch (const std::logic_error& err)
             {
                 std::cout << err.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << Constants::SOMETHING_WENT_WRONG_ERROR_MESSAGE << std::endl;
             }
         }
         else if (std::strcmp(command, Constants::ROTATE_COMMAND) == 0)
@@ -99,6 +119,14 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             {
                 std::cout << err.what() << std::endl;
             }
+            catch (const std::invalid_argument& err)
+            {
+                std::cout << err.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << Constants::SOMETHING_WENT_WRONG_ERROR_MESSAGE << std::endl;
+            }
         }
         else if (std::strcmp(command, Constants::ADD_COMMAND) == 0) 
         {
@@ -112,6 +140,10 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             catch (const std::logic_error& err)
             {
                 std::cout << err.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << Constants::SOMETHING_WENT_WRONG_ERROR_MESSAGE << std::endl;
             }
         }
         else if (std::strcmp(command, Constants::COLLAGE_COMMAND) == 0)
@@ -135,6 +167,10 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             catch (const std::logic_error& err)
             {
                 std::cout << err.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << Constants::SOMETHING_WENT_WRONG_ERROR_MESSAGE << std::endl;
             }
         }
         else if (std::strcmp(command, Constants::SWITCH_COMMAND) == 0) 
@@ -160,6 +196,10 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             {
                 std::cout << err.what() << std::endl;
             }
+            catch (...)
+            {
+                std::cout << Constants::SOMETHING_WENT_WRONG_ERROR_MESSAGE << std::endl;
+            }
         }
         else if (std::strcmp(command, Constants::UNDO_COMMAND) == 0) 
         {
@@ -170,6 +210,10 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             catch (const std::logic_error& err)
             {
                 std::cout << err.what() << std::endl;
+            }
+            catch (...)
+            {
+                std::cout << Constants::SOMETHING_WENT_WRONG_ERROR_MESSAGE << std::endl;
             }
         }
         else if (std::strcmp(command, Constants::EXIT_COMMAND) == 0)
@@ -190,6 +234,14 @@ void Engine::parseCommandsFrom(std::istream& ifs)
             {
                 std::cout << err.what() << std::endl;
             }
+            catch (...)
+            {
+                std::cout << Constants::SOMETHING_WENT_WRONG_ERROR_MESSAGE << std::endl;
+            }
+        }
+        else 
+        {
+            std::cout << Constants::INVALID_COMMAND_MESSAGE << std::endl;
         }
     }
 }
