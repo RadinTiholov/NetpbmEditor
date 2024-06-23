@@ -126,6 +126,10 @@ int Session::findFileIndexByName(const char* fileName) const
 void Session::info()
 {
 	std::cout << "Name of images in the session: ";
+	for (int i = 0; i < this->files.getSize(); i++) // If there are any executed add commands
+	{
+		std::cout << this->files[i]->getFileName() << ' ';
+	}
 	for (int i = 0; i < this->commands.getSize(); i++)
 	{
 		AddCommand* cmd = dynamic_cast<AddCommand*>(this->commands[i]);
