@@ -1,23 +1,9 @@
-﻿  Session.cpp
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(35,20): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(37,16): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(46,20): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(48,16): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(57,15): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(65,15): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(74,29): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(87,18): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(118,41): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(120,11): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(129,20): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(133,20): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(142,20): warning C4018: '<': signed/unsigned mismatch
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(160,62): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(175,62): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Session.cpp(178,49): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+﻿  Engine.cpp
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\Engine.cpp(122,13): warning C4286: 'const std::invalid_argument &': is caught by base class ('const std::logic_error &') on line 118
   Generating code
-  4 of 509 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    21 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\RasterFile.cpp(71): warning C4715: 'RasterFile::collageWith': not all control paths return a value
+D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\NetpbmEditor\FileFactory.cpp(258): warning C4715: 'FileFactory::createFile': not all control paths return a value
+  All 509 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   NetpbmEditor.vcxproj -> D:\FMI Introduction to programming\Kursova rabota OOP\NetpbmEditor\NetpbmEditor\x64\Release\NetpbmEditor.exe

@@ -220,7 +220,7 @@ RasterFile* FileFactory::createFile(const char* fileName)
 	ifs >> width;
 	ifs >> height;
 	ifs.ignore();
-	//TODO: Think about the comments
+
 	if (std::strlen(magicNumber) != 2)
 	{
 		throw std::runtime_error(Constants::COULD_NOT_OPEN_FILE_ERROR_MESSAGE);

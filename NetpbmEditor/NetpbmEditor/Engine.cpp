@@ -188,6 +188,7 @@ void Engine::parseCommandsFrom(std::istream& ifs)
                 ss >> infoText;
                 if (std::strcmp(infoText, "info") != 0)
                 {
+                    std::cout << Constants::INVALID_COMMAND_MESSAGE << std::endl;
                     continue;
                 }
                 this->editor.currentSessionInfo();
