@@ -19,6 +19,11 @@ void Session::addFile(RasterFile* file)
 
 void Session::createFile(const char* fileName)
 {
+	if (findFileIndexByName(fileName) != -1)
+	{
+		std::cout << Constants::ALREADY_EXISTS_MESSAGE << std::endl;
+		return;
+	}
 	RasterFile* createdImage = FileFactory::createFile(fileName);
 	addFile(createdImage);
 }

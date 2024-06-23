@@ -20,6 +20,7 @@ struct Constants
 	static const char* INVALID_COMMAND_MESSAGE;
 	static const char* GRAYSCALE_MESSAGE;
 	static const char* MONOCHROME_MESSAGE;
+	static const char* ALREADY_EXISTS_MESSAGE;
 	static const char* CONSOLE_PREFIX;
 	static const char* INVALID_MAGIC_NUMBER;
 	static const char* INVALID_WIDTH;
